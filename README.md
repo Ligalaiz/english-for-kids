@@ -1,6 +1,6 @@
 # English for kids - приложение для изучения английских слов детьми.
 
-Link: [english-for-kids](http://ligalaiz.github.io/english-for-kids)
+Link: [english-for-kids](http://ligalaiz.github.io/english-for-kids/dist/index.html)
 
 ## Критерии оценки:
 
