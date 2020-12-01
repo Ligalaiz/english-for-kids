@@ -1705,10 +1705,8 @@ function toDo() {
 
 function gameLogicUtils() {
   if (Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('game') === 'on') {
-    Object(_gameTimer_utils__WEBPACK_IMPORTED_MODULE_1__["default"])(_constants_constants__WEBPACK_IMPORTED_MODULE_2__["DELAY"]);
-    setTimeout(function () {
-      return toDo();
-    }, _constants_constants__WEBPACK_IMPORTED_MODULE_2__["DELAY_MS"]);
+    // gameTimerUtils(DELAY);
+    // setTimeout(() => toDo(), DELAY_MS);
     toDo();
   }
 }
