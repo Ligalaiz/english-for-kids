@@ -21,8 +21,8 @@ function toDo() {
 
 export default function gameLogicUtils() {
   if (get('game') === 'on') {
-    gameTimerUtils(DELAY);
-    setTimeout(() => toDo(), DELAY_MS);
+    // gameTimerUtils(DELAY);
+    // setTimeout(() => toDo(), DELAY_MS);
     toDo();
   }
 }
