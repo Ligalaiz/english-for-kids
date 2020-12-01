@@ -1,0 +1,26 @@
+.page--cars .card {
+  &--cadillac {
+    background-image: url('../assets/image/category/cars/cadillac.webp');
+  }
+  &--buick {
+    background-image: url('../assets/image/category/cars/buick.webp');
+  }
+  &--chevy {
+    background-image: url('../assets/image/category/cars/chevy.webp');
+  }
+  &--dodge {
+    background-image: url('../assets/image/category/cars/dodge.webp');
+  }
+  &--ford {
+    background-image: url('../assets/image/category/cars/ford.webp');
+  }
+  &--freightliner {
+    background-image: url('../assets/image/category/cars/freightliner.webp');
+  }
+  &--l-atv {
+    background-image: url('../assets/image/category/cars/l-atv.webp');
+  }
+  &--tesla {
+    background-image: url('../assets/image/category/cars/tesla.webp');
+  }
+}

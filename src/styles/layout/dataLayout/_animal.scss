@@ -1,0 +1,26 @@
+.page--animal .card {
+  &--animal {
+    background-image: url('../assets/image/category/animal/animal.webp');
+  }
+  &--bear {
+    background-image: url('../assets/image/category/animal/bear.webp');
+  }
+  &--cat {
+    background-image: url('../assets/image/category/animal/cat.webp');
+  }
+  &--eagle {
+    background-image: url('../assets/image/category/animal/eagle.webp');
+  }
+  &--human {
+    background-image: url('../assets/image/category/animal/human.webp');
+  }
+  &--killerWhale {
+    background-image: url('../assets/image/category/animal/killerWhale.webp');
+  }
+  &--purgatorius {
+    background-image: url('../assets/image/category/animal/purgatorius.webp');
+  }
+  &--tiger {
+    background-image: url('../assets/image/category/animal/tiger.webp');
+  }
+}

@@ -1,0 +1,26 @@
+.page--weather .card {
+  &--cloudy {
+    background-image: url('../assets/image/category/weather/cloudy.webp');
+  }
+  &--frosty {
+    background-image: url('../assets/image/category/weather/frosty.webp');
+  }
+  &--raining {
+    background-image: url('../assets/image/category/weather/raining.webp');
+  }
+  &--snowing {
+    background-image: url('../assets/image/category/weather/snowing.webp');
+  }
+  &--sunny {
+    background-image: url('../assets/image/category/weather/sunny.webp');
+  }
+  &--tornados {
+    background-image: url('../assets/image/category/weather/tornados.webp');
+  }
+  &--tunderstorm {
+    background-image: url('../assets/image/category/weather/tunderstorm.webp');
+  }
+  &--windy {
+    background-image: url('../assets/image/category/weather/windy.webp');
+  }
+}

@@ -1,0 +1,26 @@
+.page--health .card {
+  &--pressure {
+    background-image: url('../assets/image/category/health/pressure.webp');
+  }
+  &--fitness {
+    background-image: url('../assets/image/category/health/fitness.webp');
+  }
+  &--food {
+    background-image: url('../assets/image/category/health/food.webp');
+  }
+  &--vitamins {
+    background-image: url('../assets/image/category/health/vitamins.webp');
+  }
+  &--meditation {
+    background-image: url('../assets/image/category/health/meditation.webp');
+  }
+  &--water {
+    background-image: url('../assets/image/category/health/water.webp');
+  }
+  &--happiness {
+    background-image: url('../assets/image/category/health/happiness.webp');
+  }
+  &--sleep {
+    background-image: url('../assets/image/category/health/sleep.webp');
+  }
+}

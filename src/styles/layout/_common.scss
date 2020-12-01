@@ -1,0 +1,270 @@
+@import './dataLayout/it';
+@import './dataLayout/cars';
+@import './dataLayout/city';
+@import './dataLayout/home';
+@import './dataLayout/sport';
+@import './dataLayout/health';
+@import './dataLayout/animal';
+@import './dataLayout/weather';
+@import './dataLayout/category';
+
+.wrap {
+  height: 100vh;
+  width: 100vw;
+  min-width: 320px;
+
+  background: url('../assets/image/bg/bg--leo.png') 90% bottom no-repeat,
+    url('../assets/image/bg/bg--bottom.png') left bottom no-repeat,
+    url('../assets/image/bg/bg--top.png') right top no-repeat;
+
+  overflow-x: hidden;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  padding: 90px 0;
+  min-height: 500px;
+  height: 100%;
+
+  &__page {
+    max-width: 880px;
+  }
+}
+
+.page {
+  &__row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 15px;
+  }
+  &__stars {
+    min-height: 30px;
+    min-width: 30px;
+    max-width: 95%;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    border-radius: 16px;
+  }
+}
+
+.stars {
+  display: flex;
+  &__item {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    &--true {
+      background-image: url('../assets/image/icon/progress--true.svg');
+    }
+    &--false {
+      background-image: url('../assets/image/icon/progress--false.svg');
+    }
+  }
+}
+
+.card {
+  position: relative;
+
+  min-width: 200px;
+  min-height: 200px;
+  padding-top: 168px;
+  border-radius: 10px;
+
+  font-size: 16px;
+  font-weight: 800;
+  text-align: center;
+  color: $text-color--grey;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: $white-color;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+  transition: all 0.5s linear;
+  &--rotate {
+    transform: rotateY(180deg);
+  }
+  &--game {
+    height: 10px;
+    padding-top: 160px;
+    min-height: 160px;
+  }
+
+  &__title {
+    transition-delay: 0.25s;
+    &--rotate {
+      transform: rotateY(-180deg);
+    }
+  }
+
+  &__content {
+    position: relative;
+    &--game {
+      display: none;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+
+    background-size: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-image: url('../assets/image/icon/rotate.svg');
+
+    outline: none;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: all 0.2s linear;
+    &:hover {
+      background-color: #0df2e726;
+      box-shadow: 0 7px 15px rgba(0, 0, 0, 0.25), 0 4px 6px rgba(0, 0, 0, 0.22);
+    }
+    &--hidden {
+      visibility: hidden;
+    }
+  }
+  &--disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+
+.timer {
+  font-size: 142px;
+  font-weight: 700;
+  color: $white-color;
+  &__wrap {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    top: 50%;
+
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background-color: $brand-color--light;
+    transform: translate(-50%, -50%);
+    &--active {
+      display: flex;
+    }
+  }
+}
+
+.message {
+  &__wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 15px;
+
+    background-color: $brand-color--light;
+    &--active {
+      display: flex;
+    }
+  }
+  &__text {
+    color: $white-color;
+    font-size: 22px;
+  }
+}
+
+.repeat__btn {
+  display: none;
+  margin: 0 auto;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+
+  color: $white-color;
+  font-size: 20px;
+
+  background-color: $brand-color;
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.25), 0 4px 6px rgba(0, 0, 0, 0.22);
+  outline: none;
+
+  cursor: pointer;
+  transition: all 0.2s linear;
+
+  &--anime {
+    box-shadow: none;
+  }
+  &--active {
+    display: block;
+  }
+}
+
+@media (max-width: 1465px) {
+  .wrap {
+    background: url('../assets/image/bg/bg--leo.png') 100% bottom no-repeat,
+      url('../assets/image/bg/bg--bottom.png') left bottom no-repeat,
+      url('../assets/image/bg/bg--top.png') right top no-repeat;
+  }
+}
+
+@media (max-width: 1180px) {
+  .main {
+    padding-top: 105px;
+  }
+  .wrap {
+    background: url('../assets/image/bg/bg--bottom.png') left bottom no-repeat,
+      url('../assets/image/bg/bg--top.png') right top no-repeat;
+  }
+  .switch {
+    top: 60px;
+    right: 10%;
+  }
+}
+
+@media (max-width: 940px) {
+  .main {
+    padding-top: 70px;
+  }
+  .switch {
+    top: 0px;
+    right: calc(-50% + 40px);
+    display: block;
+    position: relative;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 844px) {
+  .card {
+    min-width: 180px;
+    min-height: 180px;
+    padding-top: 150px;
+    &__btn {
+      left: 0;
+    }
+  }
+}

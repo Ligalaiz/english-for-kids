@@ -1,0 +1,26 @@
+.page--category .card {
+  &--city {
+    background-image: url('../assets/image/category/city/los-angeles.webp');
+  }
+  &--home {
+    background-image: url('../assets/image/category/home/home.webp');
+  }
+  &--it {
+    background-image: url('../assets/image/category/it/tehnology.webp');
+  }
+  &--weather {
+    background-image: url('../assets/image/category/weather/weather.webp');
+  }
+  &--sport {
+    background-image: url('../assets/image/category/sport/sport.webp');
+  }
+  &--health {
+    background-image: url('../assets/image/category/health/health.webp');
+  }
+  &--animal {
+    background-image: url('../assets/image/category/animal/animal.webp');
+  }
+  &--cars {
+    background-image: url('../assets/image/category/cars/car.webp');
+  }
+}

@@ -1,0 +1,26 @@
+.page--sport .card {
+  &--cycleRace {
+    background-image: url('../assets/image/category/sport/cycleRace.webp');
+  }
+  &--run {
+    background-image: url('../assets/image/category/sport/run.webp');
+  }
+  &--skiing {
+    background-image: url('../assets/image/category/sport/skiing.webp');
+  }
+  &--skydiving {
+    background-image: url('../assets/image/category/sport/skydiving.webp');
+  }
+  &--swimming {
+    background-image: url('../assets/image/category/sport/swimming.webp');
+  }
+  &--box {
+    background-image: url('../assets/image/category/sport/box.webp');
+  }
+  &--mountaineering {
+    background-image: url('../assets/image/category/sport/mountaineering.webp');
+  }
+  &--fmx {
+    background-image: url('../assets/image/category/sport/fmx.webp');
+  }
+}

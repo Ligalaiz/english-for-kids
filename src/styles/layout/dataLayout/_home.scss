@@ -1,0 +1,26 @@
+.page--home .card {
+  &--livingRoom {
+    background-image: url('../assets/image/category/home/living-room.webp');
+  }
+  &--house {
+    background-image: url('../assets/image/category/home/home.webp');
+  }
+  &--backyard {
+    background-image: url('../assets/image/category/home/backyard.webp');
+  }
+  &--pool {
+    background-image: url('../assets/image/category/home/pool.webp');
+  }
+  &--kitchen {
+    background-image: url('../assets/image/category/home/kitchen.webp');
+  }
+  &--hall {
+    background-image: url('../assets/image/category/home/hall.webp');
+  }
+  &--fireplace {
+    background-image: url('../assets/image/category/home/fireplace.webp');
+  }
+  &--bedroom {
+    background-image: url('../assets/image/category/home/bedroom.webp');
+  }
+}
