@@ -96,9 +96,7 @@
     transform: rotateY(180deg);
   }
   &--game {
-    height: 10px;
-    padding-top: 160px;
-    min-height: 160px;
+    background-size: cover;
   }
 
   &__title {

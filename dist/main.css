@@ -474,9 +474,7 @@ input:checked + .slider:before {
   .card--rotate {
     transform: rotateY(180deg); }
   .card--game {
-    height: 10px;
-    padding-top: 160px;
-    min-height: 160px; }
+    background-size: cover; }
   .card__title {
     transition-delay: 0.25s; }
     .card__title--rotate {
