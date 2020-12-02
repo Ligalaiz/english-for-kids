@@ -10,14 +10,9 @@ export default function checkStateUtils() {
     set('page', 'category');
     set('game', 'off');
   }
-
-  // State game btn
+  if (!get('mistake')) set('mistake', '0');
   if (!get('startGame')) {
     set('startGame', 'off');
-    // if (document.querySelector('.game__btn')) {
-    //   const gameBtn = document.querySelector('.game__btn');
-    //   gameBtn.innerText = 'Start';
-    // }
   }
 
   if (!get('gameProgress')) {
@@ -51,6 +46,5 @@ export default function checkStateUtils() {
       }
     }
   }
-  // set('page', 'category');
   location.hash = get('page');
 }

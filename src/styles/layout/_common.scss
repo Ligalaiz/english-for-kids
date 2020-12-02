@@ -96,6 +96,7 @@
     transform: rotateY(180deg);
   }
   &--game {
+    background-position: center;
     background-size: cover;
   }
 
@@ -179,6 +180,7 @@
     transform: translate(-50%, -50%);
 
     display: none;
+    flex-direction: column;
     width: 200px;
     height: 200px;
     justify-content: center;
@@ -186,14 +188,33 @@
 
     border-radius: 15px;
 
-    background-color: $brand-color--light;
-    &--active {
+    z-index: 100;
+    &--active-success {
       display: flex;
+    }
+    &--active-failure {
+      display: flex;
+    }
+    &--active-success .message__image {
+      background-image: url('../assets/image/icon/win.gif');
+    }
+    &--active-failure .message__image {
+      background-image: url('../assets/image/icon/lose.gif');
     }
   }
   &__text {
-    color: $white-color;
+    color: $brand-color;
+    font-weight: 700;
     font-size: 22px;
+  }
+  &__image {
+    width: 90%;
+    height: 90%;
+    border-radius: 14px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 }
 

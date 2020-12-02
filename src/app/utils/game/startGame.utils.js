@@ -1,11 +1,8 @@
 import gameLogicUtils from './gameLogic.utils';
-// import  repeatWordUtils from './game/repeatWord.utils';
-
+import  repeatWordUtils from './repeatWord.utils';
 import { get, set } from '../storage.utils';
 
 export default function startGameUtils({ gameBtn, target, type }) {
-  
-
   function checkStateBtn() {
     if (get('startGame') === 'off') {
       set('startGame', 'on');
@@ -21,16 +18,13 @@ export default function startGameUtils({ gameBtn, target, type }) {
   if (target.classList.contains('game__btn')) {
     if (type.match(/mousedown/)) {
       animationBtn();
+      if (get('startGame') === 'on') {
+        repeatWordUtils(target, type);
+      }
       checkStateBtn();
-      // if (get('startGame') === 'on') {
-      
-      // }
     }
     if (type.match(/mouseup/)) {
       animationBtn();
     }
   }
-  
-  
-  // repeatWordUtils(target, type);
 }

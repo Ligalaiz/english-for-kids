@@ -474,6 +474,7 @@ input:checked + .slider:before {
   .card--rotate {
     transform: rotateY(180deg); }
   .card--game {
+    background-position: center;
     background-size: cover; }
   .card__title {
     transition-delay: 0.25s; }
@@ -535,18 +536,34 @@ input:checked + .slider:before {
   left: 50%;
   transform: translate(-50%, -50%);
   display: none;
+  flex-direction: column;
   width: 200px;
   height: 200px;
   justify-content: center;
   align-items: center;
   border-radius: 15px;
-  background-color: #28c38a99; }
-  .message__wrap--active {
+  z-index: 100; }
+  .message__wrap--active-success {
     display: flex; }
+  .message__wrap--active-failure {
+    display: flex; }
+  .message__wrap--active-success .message__image {
+    background-image: url(0415162784da15c5b4e82cb6d5fb466c.gif); }
+  .message__wrap--active-failure .message__image {
+    background-image: url(05c8cb1b27ca3d6081b7ffd2231845b7.gif); }
 
 .message__text {
-  color: #ffffff;
+  color: #28c38a;
+  font-weight: 700;
   font-size: 22px; }
+
+.message__image {
+  width: 90%;
+  height: 90%;
+  border-radius: 14px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
 
 .game__btn {
   display: block;
@@ -713,7 +730,8 @@ input:checked + .slider:before {
     opacity: 0.3;
     transform: translateX(-154%); } }
 
-.overlay--active {
+.overlay--active,
+.overlay--active-message {
   position: fixed;
   top: 0;
   left: 0;
@@ -721,6 +739,9 @@ input:checked + .slider:before {
   width: 100vw;
   height: 100vh;
   z-index: 90; }
+
+.overlay--active-message {
+  background-color: #f5f5dc; }
 
 
 /*# sourceMappingURL=main.css.map*/

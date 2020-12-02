@@ -47,6 +47,7 @@ export const commonPageTemplate = (parent) => {
       createElementUtils('div', 'timer', null, null),
     ], null),
     createElementUtils('div', 'message__wrap', [
+      createElementUtils('div', 'message__image', null, null),
       createElementUtils('div', 'message__text', null, null),
     ], null),
     createElementUtils('div', 'overlay', null, null),

@@ -43,7 +43,7 @@
     display: block;
     min-width: 170px;
     border-radius: 10px;
-    
+
     font-size: 20px;
     color: $white-color;
     text-align: center;
@@ -52,8 +52,9 @@
     &:hover {
       color: $brand-color;
 
-      background-color:$white-color;
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+      background-color: $white-color;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
     }
     &--active:hover {
       box-shadow: none;
@@ -106,7 +107,7 @@
   &__link {
     display: block;
     padding: 10px;
-    
+
     text-align: center;
     color: $white-color;
     font-size: 20px;
@@ -146,7 +147,8 @@
   }
 }
 
-.overlay--active {
+.overlay--active,
+.overlay--active-message {
   position: fixed;
   top: 0;
   left: 0;
@@ -156,4 +158,8 @@
   height: 100vh;
 
   z-index: 90;
+}
+
+.overlay--active-message {
+  background-color: $overlay-color;
 }

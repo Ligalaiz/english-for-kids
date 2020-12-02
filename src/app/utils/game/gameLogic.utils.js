@@ -3,7 +3,6 @@ import gameTimerUtils from './gameTimer.utils';
 import { DELAY, DELAY_MS } from '../../constants/constants';
 import cardsSoundUtils from '../cardsSound.utils';
 import clickHandlerUtils from './clickHandler.utils';
-// import repeatWordUtils from './repeatWord.utils';
 
 function toDo() {
   const cards = document.querySelectorAll('.card');

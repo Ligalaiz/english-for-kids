@@ -983,7 +983,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/createElement.utils */ "./app/utils/createElement.utils.js");
 
 var commonPageTemplate = function commonPageTemplate(parent) {
-  Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'wrap', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('header', 'header', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('button', 'header__btn', null, null, ['type', 'button']), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'header__logo', 'English for kids', null, ['href', '#'], ['route', 'category']), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('nav', 'header__nav nav', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('ul', 'nav__list reset-list', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Category', null, ['href', '#'], ['route', 'category'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'City', null, ['href', '#'], ['route', 'city'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Home', null, ['href', '#'], ['route', 'home'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Tehnology', null, ['href', '#'], ['route', 'it'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Weather', null, ['href', '#'], ['route', 'weather'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Sport', null, ['href', '#'], ['route', 'sport'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Health', null, ['href', '#'], ['route', 'health'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Animal', null, ['href', '#'], ['route', 'animal'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Cars', null, ['href', '#'], ['route', 'cars'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Statistics', null, ['href', '#'], ['route', 'statistics'])], null)], null)], null)], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('main', 'main', null, null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'timer__wrap', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'timer', null, null)], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'message__wrap', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'message__text', null, null)], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'overlay', null, null)], parent);
+  Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'wrap', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('header', 'header', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('button', 'header__btn', null, null, ['type', 'button']), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'header__logo', 'English for kids', null, ['href', '#'], ['route', 'category']), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('nav', 'header__nav nav', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('ul', 'nav__list reset-list', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Category', null, ['href', '#'], ['route', 'category'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'City', null, ['href', '#'], ['route', 'city'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Home', null, ['href', '#'], ['route', 'home'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Tehnology', null, ['href', '#'], ['route', 'it'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Weather', null, ['href', '#'], ['route', 'weather'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Sport', null, ['href', '#'], ['route', 'sport'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Health', null, ['href', '#'], ['route', 'health'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Animal', null, ['href', '#'], ['route', 'animal'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Cars', null, ['href', '#'], ['route', 'cars'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Statistics', null, ['href', '#'], ['route', 'statistics'])], null)], null)], null)], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('main', 'main', null, null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'timer__wrap', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'timer', null, null)], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'message__wrap', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'message__image', null, null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'message__text', null, null)], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'overlay', null, null)], parent);
 };
 
 /***/ }),
@@ -1290,14 +1290,12 @@ function checkStateUtils() {
   if (!Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('page')) {
     Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('page', 'category');
     Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('game', 'off');
-  } // State game btn
+  }
 
+  if (!Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('mistake')) Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('mistake', '0');
 
   if (!Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('startGame')) {
-    Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('startGame', 'off'); // if (document.querySelector('.game__btn')) {
-    //   const gameBtn = document.querySelector('.game__btn');
-    //   gameBtn.innerText = 'Start';
-    // }
+    Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('startGame', 'off');
   }
 
   if (!Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameProgress')) {
@@ -1334,8 +1332,7 @@ function checkStateUtils() {
         document.querySelector('.game__btn').innerText = 'Start';
       }
     }
-  } // set('page', 'category');
-
+  }
 
   location.hash = Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('page');
 }
@@ -1519,11 +1516,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _storage_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./storage.utils */ "./app/utils/storage.utils.js");
 /* harmony import */ var _changeCardsStyle_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./changeCardsStyle.utils */ "./app/utils/changeCardsStyle.utils.js");
 /* harmony import */ var _game_startGame_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./game/startGame.utils */ "./app/utils/game/startGame.utils.js");
+/* harmony import */ var _game_clearStarsField_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./game/clearStarsField.utils */ "./app/utils/game/clearStarsField.utils.js");
+
 
 
 
 function gameUtils(target, type) {
   var gameBtn = document.querySelector('.game__btn');
+  var cards = document.querySelectorAll('.card');
+  var starsField = document.querySelector('.stars');
 
   if (type.match(/change/)) {
     if (!target.dataset) return;
@@ -1533,6 +1534,12 @@ function gameUtils(target, type) {
         Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('game', 'off');
         Object(_changeCardsStyle_utils__WEBPACK_IMPORTED_MODULE_1__["default"])();
         gameBtn.classList.remove('game__btn--active');
+        cards.forEach(function (item) {
+          return item.classList.remove('card--disabled');
+        });
+        Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('startGame', 'off');
+        Object(_game_clearStarsField_utils__WEBPACK_IMPORTED_MODULE_3__["default"])(starsField);
+        Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('mistake', '0');
       } else if (Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('game') === 'off') {
         Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('game', 'on');
         Object(_changeCardsStyle_utils__WEBPACK_IMPORTED_MODULE_1__["default"])();
@@ -1622,6 +1629,7 @@ function clickHandlerUtils(_ref) {
         path: 'app'
       });
       Object(_createElement_utils__WEBPACK_IMPORTED_MODULE_2__["default"])('div', 'stars__item stars__item--false', null, starsField);
+      Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["set"])('mistake', "".concat(Number(Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["get"])('mistake')) + 1));
       console.log('добавляем в score ошибку');
     }
 
@@ -1642,6 +1650,19 @@ function clickHandlerUtils(_ref) {
       Object(_clearStarsField_utils__WEBPACK_IMPORTED_MODULE_3__["default"])(starsField);
       Object(_changeCardsStyle_utils__WEBPACK_IMPORTED_MODULE_4__["default"])();
       Object(_showGameMessage_utils__WEBPACK_IMPORTED_MODULE_5__["default"])();
+
+      if (Number(Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["get"])('mistake')) > 0) {
+        Object(_cardsSound_utils__WEBPACK_IMPORTED_MODULE_0__["default"])({
+          sound: 'failure',
+          path: 'app'
+        });
+      } else {
+        Object(_cardsSound_utils__WEBPACK_IMPORTED_MODULE_0__["default"])({
+          sound: 'success',
+          path: 'app'
+        });
+      }
+
       gameBtn.classList.remove('game__btn--active');
       setTimeout(function () {
         Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["set"])('game', 'off');
@@ -1702,7 +1723,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 
- // import repeatWordUtils from './repeatWord.utils';
+
 
 function toDo() {
   var cards = document.querySelectorAll('.card');
@@ -1773,6 +1794,29 @@ function gameTimerUtils(DELAY) {
 
 /***/ }),
 
+/***/ "./app/utils/game/repeatWord.utils.js":
+/*!********************************************!*\
+  !*** ./app/utils/game/repeatWord.utils.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return repeatWordUtils; });
+/* harmony import */ var _storage_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../storage.utils */ "./app/utils/storage.utils.js");
+/* harmony import */ var _cardsSound_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../cardsSound.utils */ "./app/utils/cardsSound.utils.js");
+
+
+function repeatWordUtils() {
+  Object(_cardsSound_utils__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    sound: Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameArray')[Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameArray').length - 1],
+    path: Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('page')
+  });
+}
+
+/***/ }),
+
 /***/ "./app/utils/game/showGameMessage.utils.js":
 /*!*************************************************!*\
   !*** ./app/utils/game/showGameMessage.utils.js ***!
@@ -1783,11 +1827,32 @@ function gameTimerUtils(DELAY) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return showGameStatusUtils; });
+/* harmony import */ var _storage_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../storage.utils */ "./app/utils/storage.utils.js");
+
 function showGameStatusUtils() {
   var message = document.querySelector('.message__wrap');
-  message.classList.add('message__wrap--active');
+  var text = document.querySelector('.message__text');
+  var overlay = document.querySelector('.overlay');
+
+  if (Number(Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('mistake')) === 0) {
+    message.classList.add('message__wrap--active-success');
+    text.innerText = 'Success!';
+  } else {
+    message.classList.add('message__wrap--active-failure');
+    text.innerText = "".concat(Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('mistake'), " ").concat(Number(Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('mistake')) > 1 ? 'mistakes' : 'mistake');
+  }
+
+  overlay.classList.add('overlay--active-message');
   setTimeout(function () {
-    return message.classList.remove('message__wrap--active');
+    if (Number(Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('mistake')) === 0) {
+      message.classList.remove('message__wrap--active-success');
+    } else {
+      message.classList.remove('message__wrap--active-failure');
+    }
+
+    Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('mistake', '0');
+    overlay.classList.remove('overlay--active-message');
+    text.innerText = '';
   }, 3000);
 }
 
@@ -1804,8 +1869,9 @@ function showGameStatusUtils() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return startGameUtils; });
 /* harmony import */ var _gameLogic_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./gameLogic.utils */ "./app/utils/game/gameLogic.utils.js");
-/* harmony import */ var _storage_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../storage.utils */ "./app/utils/storage.utils.js");
- // import  repeatWordUtils from './game/repeatWord.utils';
+/* harmony import */ var _repeatWord_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./repeatWord.utils */ "./app/utils/game/repeatWord.utils.js");
+/* harmony import */ var _storage_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../storage.utils */ "./app/utils/storage.utils.js");
+
 
 
 function startGameUtils(_ref) {
@@ -1814,8 +1880,8 @@ function startGameUtils(_ref) {
       type = _ref.type;
 
   function checkStateBtn() {
-    if (Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["get"])('startGame') === 'off') {
-      Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["set"])('startGame', 'on');
+    if (Object(_storage_utils__WEBPACK_IMPORTED_MODULE_2__["get"])('startGame') === 'off') {
+      Object(_storage_utils__WEBPACK_IMPORTED_MODULE_2__["set"])('startGame', 'on');
       gameBtn.innerText = 'Repeat';
       Object(_gameLogic_utils__WEBPACK_IMPORTED_MODULE_0__["default"])();
     }
@@ -1828,15 +1894,18 @@ function startGameUtils(_ref) {
   if (target.classList.contains('game__btn')) {
     if (type.match(/mousedown/)) {
       animationBtn();
-      checkStateBtn(); // if (get('startGame') === 'on') {
-      // }
+
+      if (Object(_storage_utils__WEBPACK_IMPORTED_MODULE_2__["get"])('startGame') === 'on') {
+        Object(_repeatWord_utils__WEBPACK_IMPORTED_MODULE_1__["default"])(target, type);
+      }
+
+      checkStateBtn();
     }
 
     if (type.match(/mouseup/)) {
       animationBtn();
     }
-  } // repeatWordUtils(target, type);
-
+  }
 }
 
 /***/ }),

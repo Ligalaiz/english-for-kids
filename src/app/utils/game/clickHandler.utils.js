@@ -38,6 +38,7 @@ export default function clickHandlerUtils({ cards, count, songArray }) {
         null,
         starsField
       );
+      set('mistake', `${Number(get('mistake')) + 1}`);
       console.log('добавляем в score ошибку');
     }
     songArray.pop();
@@ -53,7 +54,13 @@ export default function clickHandlerUtils({ cards, count, songArray }) {
       clearStarsFieldUtils(starsField);
       changeCardsStyleUtils();
       showGameMessageUtils();
+      if (Number(get('mistake')) > 0) {
+        cardsSoundUtils({ sound: 'failure', path: 'app' });
+      } else {
+        cardsSoundUtils({ sound: 'success', path: 'app' });
+      }
       gameBtn.classList.remove('game__btn--active');
+
       setTimeout(() => {
         set('game', 'off');
         if (document.getElementById('checkbox')) {
@@ -61,8 +68,11 @@ export default function clickHandlerUtils({ cards, count, songArray }) {
             get('game') === 'on' ? true : false;
         }
       }, 3000);
+
       cards.forEach((item) => item.classList.remove('card--disabled'));
+
       set('startGame', 'off');
+      
       routerUtils.set(pageTypeRoutes.defaultPageType);
     }
   }
