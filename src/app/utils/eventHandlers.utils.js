@@ -4,7 +4,7 @@ import cardsRotateUtils from './cardsRotate.utils';
 import { menuSwitcherUtils, menuCloseUtils, homeBtnUtils } from './menuSwitcher.utils';
 import { get } from './storage.utils';
 import gameUtils from './game.utils';
-import  repeatWordUtils from './game/repeatWord.utils';
+
 
 function handler(e, routerUtils) {
   const { target, type } = e;
@@ -36,14 +36,10 @@ function handler(e, routerUtils) {
     }, 0);
   }
 
-  if (type.match(/mousedown|mouseup|mouseleave/)) {
+  if (type.match(/mousedown|mouseup|mouseleave|change/)) {
     cardsRotateUtils(target, type);
     homeBtnUtils(target, type);
-    repeatWordUtils(target, type);
-  }
-
-  if (type.match(/change/)) {
-    gameUtils(target);
+    gameUtils(target, type);
   }
 }
 

@@ -46,7 +46,7 @@ function addCards({ target, page }) {
       <div class="page__row">
         {{cards}}
       </div>
-      <button class="repeat__btn" type="button">repeat</button>
+      <button class="game__btn" type="button"></button>
     </div>`;
 
   let cardTemplate = `

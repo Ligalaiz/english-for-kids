@@ -11,12 +11,21 @@ export default function checkStateUtils() {
     set('game', 'off');
   }
 
+  // State game btn
+  if (!get('startGame')) {
+    set('startGame', 'off');
+    // if (document.querySelector('.game__btn')) {
+    //   const gameBtn = document.querySelector('.game__btn');
+    //   gameBtn.innerText = 'Start';
+    // }
+  }
+
   if (!get('gameProgress')) {
     let gameProgress = [];
     for (let key in cardsData) {
       gameProgress.push(cardsData[key]);
     }
-    let tempArr = gameProgress.flat()
+    let tempArr = gameProgress.flat();
     set('gameProgress', tempArr);
   }
 
@@ -34,6 +43,12 @@ export default function checkStateUtils() {
 
     if (get('game') === 'on') {
       changeCardsStyleUtils();
+      document.querySelector('.game__btn').classList.add('game__btn--active');
+      if (get('startGame') === 'on') {
+        document.querySelector('.game__btn').innerText = 'Repeat';
+      } else {
+        document.querySelector('.game__btn').innerText = 'Start';
+      }
     }
   }
   // set('page', 'category');

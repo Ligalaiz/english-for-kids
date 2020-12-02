@@ -12,17 +12,9 @@ export default function repeatWordUtils(target, type) {
     }
   }
 
-  function animationBtn() {
-    repeatBtn.classList.toggle('repeat__btn--anime');
-  }
-  
-  if (target.classList.contains('repeat__btn')) {
+  if (target.classList.contains('game__btn')) {
     if (type.match(/mousedown/)) {
-      animationBtn();
       repeat();
-    }
-    if (type.match(/mouseup/)) {
-      animationBtn();
     }
   }
 }

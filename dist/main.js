@@ -1096,7 +1096,7 @@ function addCards(_ref) {
   }
 
   Object(_cardsShuffle_utils__WEBPACK_IMPORTED_MODULE_1__["default"])(tempData);
-  var contentRow = "\n    <label class=\"switch\">\n      <input id=\"checkbox\" type=\"checkbox\" data-control=\"checkbox\">\n      <span class=\"slider round\"></span>\n    </label>\n    <div class=\"main__page  page page--{{class}}\" data-page=\"{{class}}\">\n      <div class=\"page__stars  stars\"></div>\n      <div class=\"page__row\">\n        {{cards}}\n      </div>\n      <button class=\"repeat__btn\" type=\"button\">repeat</button>\n    </div>";
+  var contentRow = "\n    <label class=\"switch\">\n      <input id=\"checkbox\" type=\"checkbox\" data-control=\"checkbox\">\n      <span class=\"slider round\"></span>\n    </label>\n    <div class=\"main__page  page page--{{class}}\" data-page=\"{{class}}\">\n      <div class=\"page__stars  stars\"></div>\n      <div class=\"page__row\">\n        {{cards}}\n      </div>\n      <button class=\"game__btn\" type=\"button\"></button>\n    </div>";
   var cardTemplate = "\n    <div class=\"page__card  card  card--{{class}}  card--{{cardName}}\" data-sound=\"{{cardName}}\" data-category=\"{{class}}\" data-name=\"{{cardName}}\">\n      <div class=\"card__content  card__content--{{class}}  card__content--{{cardName}}\">\n        <button class=\"card__btn\" data-btn=\"btn\"></button>\n        <p class=\"card__title  card__title--{{class}}   card__title--{{cardName}}\">{{title}}</p>\n      </div>\n    </div>";
   var cardTemplateExport = '';
   tempData.forEach(function (el) {
@@ -1290,6 +1290,14 @@ function checkStateUtils() {
   if (!Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('page')) {
     Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('page', 'category');
     Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('game', 'off');
+  } // State game btn
+
+
+  if (!Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('startGame')) {
+    Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('startGame', 'off'); // if (document.querySelector('.game__btn')) {
+    //   const gameBtn = document.querySelector('.game__btn');
+    //   gameBtn.innerText = 'Start';
+    // }
   }
 
   if (!Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameProgress')) {
@@ -1318,6 +1326,13 @@ function checkStateUtils() {
 
     if (Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('game') === 'on') {
       Object(_changeCardsStyle_utils__WEBPACK_IMPORTED_MODULE_4__["default"])();
+      document.querySelector('.game__btn').classList.add('game__btn--active');
+
+      if (Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('startGame') === 'on') {
+        document.querySelector('.game__btn').innerText = 'Repeat';
+      } else {
+        document.querySelector('.game__btn').innerText = 'Start';
+      }
     }
   } // set('page', 'category');
 
@@ -1425,8 +1440,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _menuSwitcher_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./menuSwitcher.utils */ "./app/utils/menuSwitcher.utils.js");
 /* harmony import */ var _storage_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./storage.utils */ "./app/utils/storage.utils.js");
 /* harmony import */ var _game_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./game.utils */ "./app/utils/game.utils.js");
-/* harmony import */ var _game_repeatWord_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./game/repeatWord.utils */ "./app/utils/game/repeatWord.utils.js");
-
 
 
 
@@ -1469,14 +1482,10 @@ function handler(e, routerUtils) {
     }, 0);
   }
 
-  if (type.match(/mousedown|mouseup|mouseleave/)) {
+  if (type.match(/mousedown|mouseup|mouseleave|change/)) {
     Object(_cardsRotate_utils__WEBPACK_IMPORTED_MODULE_2__["default"])(target, type);
     Object(_menuSwitcher_utils__WEBPACK_IMPORTED_MODULE_3__["homeBtnUtils"])(target, type);
-    Object(_game_repeatWord_utils__WEBPACK_IMPORTED_MODULE_6__["default"])(target, type);
-  }
-
-  if (type.match(/change/)) {
-    Object(_game_utils__WEBPACK_IMPORTED_MODULE_5__["default"])(target);
+    Object(_game_utils__WEBPACK_IMPORTED_MODULE_5__["default"])(target, type);
   }
 }
 
@@ -1509,27 +1518,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return gameUtils; });
 /* harmony import */ var _storage_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./storage.utils */ "./app/utils/storage.utils.js");
 /* harmony import */ var _changeCardsStyle_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./changeCardsStyle.utils */ "./app/utils/changeCardsStyle.utils.js");
-/* harmony import */ var _game_gameLogic_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./game/gameLogic.utils */ "./app/utils/game/gameLogic.utils.js");
+/* harmony import */ var _game_startGame_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./game/startGame.utils */ "./app/utils/game/startGame.utils.js");
 
 
 
-function gameUtils(target) {
-  var repeatBtn = document.querySelector('.repeat__btn');
-  if (!target.dataset) return;
+function gameUtils(target, type) {
+  var gameBtn = document.querySelector('.game__btn');
 
-  if (target.dataset.control.match(/checkbox/)) {
-    if (Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('game') === 'on') {
-      Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('game', 'off');
-      Object(_changeCardsStyle_utils__WEBPACK_IMPORTED_MODULE_1__["default"])();
-      repeatBtn.classList.remove('repeat__btn--active');
-    } else if (Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('game') === 'off') {
-      Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('game', 'on');
-      Object(_changeCardsStyle_utils__WEBPACK_IMPORTED_MODULE_1__["default"])();
-      repeatBtn.classList.add('repeat__btn--active');
+  if (type.match(/change/)) {
+    if (!target.dataset) return;
+
+    if (target.dataset.control.match(/checkbox/)) {
+      if (Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('game') === 'on') {
+        Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('game', 'off');
+        Object(_changeCardsStyle_utils__WEBPACK_IMPORTED_MODULE_1__["default"])();
+        gameBtn.classList.remove('game__btn--active');
+      } else if (Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('game') === 'off') {
+        Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('game', 'on');
+        Object(_changeCardsStyle_utils__WEBPACK_IMPORTED_MODULE_1__["default"])();
+        gameBtn.classList.add('game__btn--active');
+        gameBtn.innerText = 'Start';
+      }
     }
-
-    Object(_game_gameLogic_utils__WEBPACK_IMPORTED_MODULE_2__["default"])();
   }
+
+  Object(_game_startGame_utils__WEBPACK_IMPORTED_MODULE_2__["default"])({
+    gameBtn: gameBtn,
+    target: target,
+    type: type
+  });
 }
 
 /***/ }),
@@ -1568,6 +1585,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _clearStarsField_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./clearStarsField.utils */ "./app/utils/game/clearStarsField.utils.js");
 /* harmony import */ var _changeCardsStyle_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../changeCardsStyle.utils */ "./app/utils/changeCardsStyle.utils.js");
 /* harmony import */ var _showGameMessage_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./showGameMessage.utils */ "./app/utils/game/showGameMessage.utils.js");
+/* harmony import */ var _app_routes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../app.routes */ "./app/app.routes.js");
+/* harmony import */ var _router_utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../router.utils */ "./app/utils/router.utils.js");
+
+
 
 
 
@@ -1579,7 +1600,7 @@ function clickHandlerUtils(_ref) {
       count = _ref.count,
       songArray = _ref.songArray;
   var starsField = document.querySelector('.stars');
-  var repeatBtn = document.querySelector('.repeat__btn');
+  var gameBtn = document.querySelector('.game__btn');
 
   function listener(e) {
     e.preventDefault();
@@ -1619,11 +1640,11 @@ function clickHandlerUtils(_ref) {
 
     if (count < 0) {
       Object(_clearStarsField_utils__WEBPACK_IMPORTED_MODULE_3__["default"])(starsField);
+      Object(_changeCardsStyle_utils__WEBPACK_IMPORTED_MODULE_4__["default"])();
       Object(_showGameMessage_utils__WEBPACK_IMPORTED_MODULE_5__["default"])();
-      repeatBtn.classList.remove('repeat__btn--active');
+      gameBtn.classList.remove('game__btn--active');
       setTimeout(function () {
         Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["set"])('game', 'off');
-        Object(_changeCardsStyle_utils__WEBPACK_IMPORTED_MODULE_4__["default"])();
 
         if (document.getElementById('checkbox')) {
           document.getElementById('checkbox').checked = Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["get"])('game') === 'on' ? true : false;
@@ -1632,6 +1653,8 @@ function clickHandlerUtils(_ref) {
       cards.forEach(function (item) {
         return item.classList.remove('card--disabled');
       });
+      Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["set"])('startGame', 'off');
+      _router_utils__WEBPACK_IMPORTED_MODULE_7__["routerUtils"].set(_app_routes__WEBPACK_IMPORTED_MODULE_6__["pageTypeRoutes"].defaultPageType);
     }
   }
 
@@ -1750,50 +1773,6 @@ function gameTimerUtils(DELAY) {
 
 /***/ }),
 
-/***/ "./app/utils/game/repeatWord.utils.js":
-/*!********************************************!*\
-  !*** ./app/utils/game/repeatWord.utils.js ***!
-  \********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return repeatWordUtils; });
-/* harmony import */ var _storage_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../storage.utils */ "./app/utils/storage.utils.js");
-/* harmony import */ var _cardsSound_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../cardsSound.utils */ "./app/utils/cardsSound.utils.js");
-
-
-function repeatWordUtils(target, type) {
-  var repeatBtn = document.querySelector('.repeat__btn');
-
-  function repeat() {
-    {
-      Object(_cardsSound_utils__WEBPACK_IMPORTED_MODULE_1__["default"])({
-        sound: Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameArray')[Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameArray').length - 1],
-        path: Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('page')
-      });
-    }
-  }
-
-  function animationBtn() {
-    repeatBtn.classList.toggle('repeat__btn--anime');
-  }
-
-  if (target.classList.contains('repeat__btn')) {
-    if (type.match(/mousedown/)) {
-      animationBtn();
-      repeat();
-    }
-
-    if (type.match(/mouseup/)) {
-      animationBtn();
-    }
-  }
-}
-
-/***/ }),
-
 /***/ "./app/utils/game/showGameMessage.utils.js":
 /*!*************************************************!*\
   !*** ./app/utils/game/showGameMessage.utils.js ***!
@@ -1810,6 +1789,54 @@ function showGameStatusUtils() {
   setTimeout(function () {
     return message.classList.remove('message__wrap--active');
   }, 3000);
+}
+
+/***/ }),
+
+/***/ "./app/utils/game/startGame.utils.js":
+/*!*******************************************!*\
+  !*** ./app/utils/game/startGame.utils.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return startGameUtils; });
+/* harmony import */ var _gameLogic_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./gameLogic.utils */ "./app/utils/game/gameLogic.utils.js");
+/* harmony import */ var _storage_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../storage.utils */ "./app/utils/storage.utils.js");
+ // import  repeatWordUtils from './game/repeatWord.utils';
+
+
+function startGameUtils(_ref) {
+  var gameBtn = _ref.gameBtn,
+      target = _ref.target,
+      type = _ref.type;
+
+  function checkStateBtn() {
+    if (Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["get"])('startGame') === 'off') {
+      Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["set"])('startGame', 'on');
+      gameBtn.innerText = 'Repeat';
+      Object(_gameLogic_utils__WEBPACK_IMPORTED_MODULE_0__["default"])();
+    }
+  }
+
+  function animationBtn() {
+    gameBtn.classList.toggle('game__btn--anime');
+  }
+
+  if (target.classList.contains('game__btn')) {
+    if (type.match(/mousedown/)) {
+      animationBtn();
+      checkStateBtn(); // if (get('startGame') === 'on') {
+      // }
+    }
+
+    if (type.match(/mouseup/)) {
+      animationBtn();
+    }
+  } // repeatWordUtils(target, type);
+
 }
 
 /***/ }),

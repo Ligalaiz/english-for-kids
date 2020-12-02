@@ -4,10 +4,12 @@ import createElementUtils from '../createElement.utils';
 import clearStarsFieldUtils from './clearStarsField.utils';
 import changeCardsStyleUtils from '../changeCardsStyle.utils';
 import showGameMessageUtils from './showGameMessage.utils';
+import { pageTypeRoutes } from '../../app.routes';
+import { routerUtils } from '../router.utils';
 
 export default function clickHandlerUtils({ cards, count, songArray }) {
   const starsField = document.querySelector('.stars');
-  const repeatBtn = document.querySelector('.repeat__btn');
+  const gameBtn = document.querySelector('.game__btn');
 
   function listener(e) {
     e.preventDefault();
@@ -49,17 +51,19 @@ export default function clickHandlerUtils({ cards, count, songArray }) {
     }
     if (count < 0) {
       clearStarsFieldUtils(starsField);
+      changeCardsStyleUtils();
       showGameMessageUtils();
-      repeatBtn.classList.remove('repeat__btn--active');
+      gameBtn.classList.remove('game__btn--active');
       setTimeout(() => {
         set('game', 'off');
-        changeCardsStyleUtils();
         if (document.getElementById('checkbox')) {
           document.getElementById('checkbox').checked =
             get('game') === 'on' ? true : false;
         }
       }, 3000);
       cards.forEach((item) => item.classList.remove('card--disabled'));
+      set('startGame', 'off');
+      routerUtils.set(pageTypeRoutes.defaultPageType);
     }
   }
 

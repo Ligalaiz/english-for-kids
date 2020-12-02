@@ -197,8 +197,8 @@
   }
 }
 
-.repeat__btn {
-  display: none;
+.game__btn {
+  display: block;
   margin: 0 auto;
   border: none;
   border-radius: 15px;
@@ -212,13 +212,13 @@
   outline: none;
 
   cursor: pointer;
-  transition: all 0.2s linear;
-
+  transition: all 0.3s linear;
+  visibility: hidden;
   &--anime {
     box-shadow: none;
   }
   &--active {
-    display: block;
+    visibility: visible;
   }
 }
 
