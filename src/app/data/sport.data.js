@@ -1,5 +1,6 @@
 export const sportData = [
   {
+    category: 'sport',
     title: 'cycle race',
     cardName: 'cycleRace',
     translate: 'велогонка',
@@ -9,6 +10,7 @@ export const sportData = [
     percent: 0,
   },
   {
+    category: 'sport',
     title: 'run',
     cardName: 'run',
     translate: 'бег',
@@ -18,6 +20,7 @@ export const sportData = [
     percent: 0,
   },
   {
+    category: 'sport',
     title: 'skiing',
     cardName: 'skiing',
     translate: 'горные лыжи',
@@ -27,15 +30,17 @@ export const sportData = [
     percent: 0,
   },
   {
+    category: 'sport',
     title: 'skydiving',
     cardName: 'skydiving',
-    translate: 'прыжки с парашютом',
+    translate: 'парашютизм',
     guess: 0,
     mistake: 0,
     click: 0,
     percent: 0,
   },
   {
+    category: 'sport',
     title: 'swimming',
     cardName: 'swimming',
     translate: 'плавание',
@@ -45,6 +50,7 @@ export const sportData = [
     percent: 0,
   },
   {
+    category: 'sport',
     title: 'box',
     cardName: 'box',
     translate: 'бокс',
@@ -54,6 +60,7 @@ export const sportData = [
     percent: 0,
   },
   {
+    category: 'sport',
     title: 'mountaineering',
     cardName: 'mountaineering',
     translate: 'альпинизм',
@@ -63,6 +70,7 @@ export const sportData = [
     percent: 0,
   },
   {
+    category: 'sport',
     title: 'fmx',
     cardName: 'fmx',
     translate: 'фмх',

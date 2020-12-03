@@ -1,5 +1,6 @@
 export const carsData = [
   {
+    category: 'cars',
     title: 'buick',
     cardName: 'buick',
     translate: 'бьюик',
@@ -9,6 +10,7 @@ export const carsData = [
     percent: 0,
   },
   {
+    category: 'cars',
     title: 'cadillac',
     cardName: 'cadillac',
     translate: 'кадиллак',
@@ -18,6 +20,7 @@ export const carsData = [
     percent: 0,
   },
   {
+    category: 'cars',
     title: 'chevy',
     cardName: 'chevy',
     translate: 'шеврлет',
@@ -27,6 +30,7 @@ export const carsData = [
     percent: 0,
   },
   {
+    category: 'cars',
     title: 'dodge',
     cardName: 'dodge',
     translate: 'додж',
@@ -36,6 +40,7 @@ export const carsData = [
     percent: 0,
   },
   {
+    category: 'cars',
     title: 'ford',
     cardName: 'ford',
     translate: 'форд',
@@ -45,6 +50,7 @@ export const carsData = [
     percent: 0,
   },
   {
+    category: 'cars',
     title: 'freightliner',
     cardName: 'freightliner',
     translate: 'фрейтлайнер',
@@ -54,6 +60,7 @@ export const carsData = [
     percent: 0,
   },
   {
+    category: 'cars',
     title: 'l-atv',
     cardName: 'l-atv',
     translate: 'л-атв',
@@ -63,6 +70,7 @@ export const carsData = [
     percent: 0,
   },
   {
+    category: 'cars',
     title: 'tesla',
     cardName: 'tesla',
     translate: 'тесла',

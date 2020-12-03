@@ -1,5 +1,6 @@
 export const healthData = [
   {
+    category: 'health',
     title: 'pressure',
     cardName: 'pressure',
     translate: 'давление',
@@ -9,6 +10,7 @@ export const healthData = [
     percent: 0,
   },
   {
+    category: 'health',
     title: 'fitness',
     cardName: 'fitness',
     translate: 'фитнес',
@@ -18,6 +20,7 @@ export const healthData = [
     percent: 0,
   },
   {
+    category: 'health',
     title: 'food',
     cardName: 'food',
     translate: 'еда',
@@ -27,6 +30,7 @@ export const healthData = [
     percent: 0,
   },
   {
+    category: 'health',
     title: 'vitamins',
     cardName: 'vitamins',
     translate: 'витамины',
@@ -36,6 +40,7 @@ export const healthData = [
     percent: 0,
   },
   {
+    category: 'health',
     title: 'meditation',
     cardName: 'meditation',
     translate: 'медитация',
@@ -45,6 +50,7 @@ export const healthData = [
     percent: 0,
   },
   {
+    category: 'health',
     title: 'water',
     cardName: 'water',
     translate: 'вода',
@@ -54,6 +60,7 @@ export const healthData = [
     percent: 0,
   },
   {
+    category: 'health',
     title: 'happiness',
     cardName: 'happiness',
     translate: 'счастье',
@@ -63,6 +70,7 @@ export const healthData = [
     percent: 0,
   },
   {
+    category: 'health',
     title: 'sleep',
     cardName: 'sleep',
     translate: 'сон',

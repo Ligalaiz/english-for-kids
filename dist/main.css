@@ -584,6 +584,58 @@ input:checked + .slider:before {
   .game__btn--active {
     visibility: visible; }
 
+.statistics__table {
+  border-radius: 12px;
+  border-collapse: collapse;
+  background-color: #ffffff60; }
+
+.statistics__header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  color: #ffffff;
+  background-color: #28c38a; }
+
+.statistics__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  transition: all 0.2s linear; }
+  .statistics__row:hover {
+    background-color: #28c38a99; }
+
+.statistics__item {
+  padding: 0 5px; }
+  .statistics__item__trained, .statistics__item__correct, .statistics__item__incorrect, .statistics__item__percent {
+    text-align: center; }
+
+.statistics__btn-wrap {
+  display: flex;
+  margin-bottom: 10px; }
+
+.statistics__btn--repeat, .statistics__btn--reset {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.25), 0 4px 6px rgba(0, 0, 0, 0.22);
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s linear; }
+
+.statistics__btn--repeat {
+  background-color: #28c38a; }
+
+.statistics__btn--reset {
+  background-color: #ef0c36ab; }
+
+.item__trained, .item__correct, .item__incorrect, .item__percent {
+  text-align: center; }
+
 @media (max-width: 1465px) {
   .wrap {
     background: url(40a275cce2f187f09b7e7e1b0b849080.png) 100% bottom no-repeat, url(08b5d3029a3639cfd050dd8cc6d286c7.png) left bottom no-repeat, url(b1c1aaea4d1f662b258e48bee4db7b29.png) right top no-repeat; } }

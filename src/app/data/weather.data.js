@@ -1,5 +1,6 @@
 export const weatherData = [
   {
+    category: 'weather',
     title: 'cloudy',
     cardName: 'cloudy',
     translate: 'облачно',
@@ -9,6 +10,7 @@ export const weatherData = [
     percent: 0,
   },
   {
+    category: 'weather',
     title: 'frosty',
     cardName: 'frosty',
     translate: 'морозно',
@@ -18,6 +20,7 @@ export const weatherData = [
     percent: 0,
   },
   {
+    category: 'weather',
     title: 'raining',
     cardName: 'raining',
     translate: 'дождливо',
@@ -27,6 +30,7 @@ export const weatherData = [
     percent: 0,
   },
   {
+    category: 'weather',
     title: 'snowing',
     cardName: 'snowing',
     translate: 'снежно',
@@ -36,6 +40,7 @@ export const weatherData = [
     percent: 0,
   },
   {
+    category: 'weather',
     title: 'sunny',
     cardName: 'sunny',
     translate: 'солнечно',
@@ -45,6 +50,7 @@ export const weatherData = [
     percent: 0,
   },
   {
+    category: 'weather',
     title: 'tornados',
     cardName: 'tornados',
     translate: 'торнадо',
@@ -54,6 +60,7 @@ export const weatherData = [
     percent: 0,
   },
   {
+    category: 'weather',
     title: 'tunderstorm',
     cardName: 'tunderstorm',
     translate: 'шторм',
@@ -63,6 +70,7 @@ export const weatherData = [
     percent: 0,
   },
   {
+    category: 'weather',
     title: 'windy',
     cardName: 'windy',
     translate: 'ветренно',

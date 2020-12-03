@@ -1,6 +1,6 @@
 import * as indexData from '../data/index.data';
 import cardsShuffleUtils from './cardsShuffle.utils';
-import { set, get } from './storage.utils';
+import { set } from './storage.utils';
 
 function addCards({ target, page }) {
   let tempData;

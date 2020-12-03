@@ -22,5 +22,5 @@ export default function showGameStatusUtils() {
     set('mistake', '0');
     overlay.classList.remove('overlay--active-message');
     text.innerText = '';
-  }, 3000);
+  }, 4000);
 }

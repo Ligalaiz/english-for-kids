@@ -243,6 +243,82 @@
   }
 }
 
+.statistics {
+  &__table {
+    border-radius: 12px;
+    border-collapse: collapse;
+
+    background-color: $white-color--light;
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+
+    color: $white-color;
+
+    background-color: $brand-color;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    transition: all 0.2s linear;
+    &:hover {
+      background-color: $brand-color--light;
+    }
+  }
+
+  &__item {
+    padding: 0 5px;
+    &__trained,
+    &__correct,
+    &__incorrect,
+    &__percent {
+      text-align: center;
+    }
+  }
+  &__btn-wrap {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  &__btn--repeat,
+  &__btn--reset {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+
+    color: #ffffff;
+    font-size: 20px;
+
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.25), 0 4px 6px rgba(0, 0, 0, 0.22);
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s linear;
+  }
+  &__btn--repeat {
+    background-color: $brand-color;
+  }
+  &__btn--reset {
+    background-color: $red-color;
+  }
+}
+
+.item {
+  &__trained,
+  &__correct,
+  &__incorrect,
+  &__percent {
+    text-align: center;
+  }
+}
+
 @media (max-width: 1465px) {
   .wrap {
     background: url('../assets/image/bg/bg--leo.png') 100% bottom no-repeat,

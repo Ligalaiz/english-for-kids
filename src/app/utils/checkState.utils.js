@@ -18,7 +18,9 @@ export default function checkStateUtils() {
   if (!get('gameProgress')) {
     let gameProgress = [];
     for (let key in cardsData) {
-      gameProgress.push(cardsData[key]);
+      if (key !== 'categoryData') {
+        gameProgress.push(cardsData[key]);
+      }
     }
     let tempArr = gameProgress.flat();
     set('gameProgress', tempArr);

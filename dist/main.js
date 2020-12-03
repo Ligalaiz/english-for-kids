@@ -211,6 +211,7 @@ var DELAY_MS = 5000;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "animalData", function() { return animalData; });
 var animalData = [{
+  category: 'animal',
   title: 'bear',
   cardName: 'bear',
   translate: 'медведь',
@@ -219,6 +220,7 @@ var animalData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'animal',
   title: 'cat',
   cardName: 'cat',
   translate: 'кошка',
@@ -227,6 +229,7 @@ var animalData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'animal',
   title: 'eagle',
   cardName: 'eagle',
   translate: 'орёл',
@@ -235,6 +238,7 @@ var animalData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'animal',
   title: 'human',
   cardName: 'human',
   translate: 'человек',
@@ -243,6 +247,7 @@ var animalData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'animal',
   title: 'killer whale',
   cardName: 'killerWhale',
   translate: 'касатка',
@@ -251,6 +256,7 @@ var animalData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'animal',
   title: 'purgatorius',
   cardName: 'purgatorius',
   translate: 'пургаториус',
@@ -259,6 +265,7 @@ var animalData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'animal',
   title: 'dog',
   cardName: 'animal',
   translate: 'собака',
@@ -267,6 +274,7 @@ var animalData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'animal',
   title: 'tiger',
   cardName: 'tiger',
   translate: 'тигр',
@@ -289,6 +297,7 @@ var animalData = [{
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "carsData", function() { return carsData; });
 var carsData = [{
+  category: 'cars',
   title: 'buick',
   cardName: 'buick',
   translate: 'бьюик',
@@ -297,6 +306,7 @@ var carsData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'cars',
   title: 'cadillac',
   cardName: 'cadillac',
   translate: 'кадиллак',
@@ -305,6 +315,7 @@ var carsData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'cars',
   title: 'chevy',
   cardName: 'chevy',
   translate: 'шеврлет',
@@ -313,6 +324,7 @@ var carsData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'cars',
   title: 'dodge',
   cardName: 'dodge',
   translate: 'додж',
@@ -321,6 +333,7 @@ var carsData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'cars',
   title: 'ford',
   cardName: 'ford',
   translate: 'форд',
@@ -329,6 +342,7 @@ var carsData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'cars',
   title: 'freightliner',
   cardName: 'freightliner',
   translate: 'фрейтлайнер',
@@ -337,6 +351,7 @@ var carsData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'cars',
   title: 'l-atv',
   cardName: 'l-atv',
   translate: 'л-атв',
@@ -345,6 +360,7 @@ var carsData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'cars',
   title: 'tesla',
   cardName: 'tesla',
   translate: 'тесла',
@@ -405,6 +421,7 @@ var categoryData = [{
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cityData", function() { return cityData; });
 var cityData = [{
+  category: 'city',
   title: 'brussels',
   cardName: 'brussels',
   translate: 'брюссель',
@@ -413,6 +430,7 @@ var cityData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'city',
   title: 'los-angeles',
   cardName: 'losAngeles',
   translate: 'лос-анджелес',
@@ -421,6 +439,7 @@ var cityData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'city',
   title: 'london',
   cardName: 'london',
   translate: 'лондон',
@@ -429,6 +448,7 @@ var cityData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'city',
   title: 'minsk',
   cardName: 'minsk',
   translate: 'минск',
@@ -437,6 +457,7 @@ var cityData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'city',
   title: 'madrid',
   cardName: 'madrid',
   translate: 'мадрид',
@@ -445,6 +466,7 @@ var cityData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'city',
   title: 'new-york',
   cardName: 'newYork',
   translate: 'нью-йорк',
@@ -453,6 +475,7 @@ var cityData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'city',
   title: 'paris',
   cardName: 'paris',
   translate: 'париж',
@@ -461,6 +484,7 @@ var cityData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'city',
   title: 'singapore',
   cardName: 'singapore',
   translate: 'сингапур',
@@ -483,6 +507,7 @@ var cityData = [{
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "healthData", function() { return healthData; });
 var healthData = [{
+  category: 'health',
   title: 'pressure',
   cardName: 'pressure',
   translate: 'давление',
@@ -491,6 +516,7 @@ var healthData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'health',
   title: 'fitness',
   cardName: 'fitness',
   translate: 'фитнес',
@@ -499,6 +525,7 @@ var healthData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'health',
   title: 'food',
   cardName: 'food',
   translate: 'еда',
@@ -507,6 +534,7 @@ var healthData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'health',
   title: 'vitamins',
   cardName: 'vitamins',
   translate: 'витамины',
@@ -515,6 +543,7 @@ var healthData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'health',
   title: 'meditation',
   cardName: 'meditation',
   translate: 'медитация',
@@ -523,6 +552,7 @@ var healthData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'health',
   title: 'water',
   cardName: 'water',
   translate: 'вода',
@@ -531,6 +561,7 @@ var healthData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'health',
   title: 'happiness',
   cardName: 'happiness',
   translate: 'счастье',
@@ -539,6 +570,7 @@ var healthData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'health',
   title: 'sleep',
   cardName: 'sleep',
   translate: 'сон',
@@ -561,6 +593,7 @@ var healthData = [{
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "homeData", function() { return homeData; });
 var homeData = [{
+  category: 'home',
   title: 'living-room',
   cardName: 'livingRoom',
   translate: 'гостиная',
@@ -569,6 +602,7 @@ var homeData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'home',
   title: 'house',
   cardName: 'house',
   translate: 'дом',
@@ -577,6 +611,7 @@ var homeData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'home',
   title: 'backyard',
   cardName: 'backyard',
   translate: 'двор',
@@ -585,6 +620,7 @@ var homeData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'home',
   title: 'pool',
   cardName: 'pool',
   translate: 'бассейн',
@@ -593,6 +629,7 @@ var homeData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'home',
   title: 'kitchen',
   cardName: 'kitchen',
   translate: 'кухня',
@@ -601,6 +638,7 @@ var homeData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'home',
   title: 'hall',
   cardName: 'hall',
   translate: 'зал',
@@ -609,6 +647,7 @@ var homeData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'home',
   title: 'fireplace',
   cardName: 'fireplace',
   translate: 'камин',
@@ -617,6 +656,7 @@ var homeData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'home',
   title: 'bedroom',
   cardName: 'bedroom',
   translate: 'спальня',
@@ -632,7 +672,7 @@ var homeData = [{
 /*!********************************!*\
   !*** ./app/data/index.data.js ***!
   \********************************/
-/*! exports provided: cityData, homeData, itData, weatherData, sportData, healthData, animalData, carsData, categoryData, statisticsData */
+/*! exports provided: cityData, homeData, itData, weatherData, sportData, healthData, animalData, carsData, categoryData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -664,10 +704,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _category_data__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./category.data */ "./app/data/category.data.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "categoryData", function() { return _category_data__WEBPACK_IMPORTED_MODULE_8__["categoryData"]; });
 
-/* harmony import */ var _statistics_data__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./statistics.data */ "./app/data/statistics.data.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "statisticsData", function() { return _statistics_data__WEBPACK_IMPORTED_MODULE_9__["statisticsData"]; });
-
-
 
 
 
@@ -692,6 +728,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "itData", function() { return itData; });
 var itData = [{
+  category: 'tehnology',
   title: 'processor',
   cardName: 'tehnology',
   translate: 'процессор',
@@ -700,6 +737,7 @@ var itData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'tehnology',
   title: 'collider',
   cardName: 'collider',
   translate: 'коллайдер',
@@ -708,6 +746,7 @@ var itData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'tehnology',
   title: 'lidar',
   cardName: 'lidar',
   translate: 'лидар',
@@ -716,6 +755,7 @@ var itData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'tehnology',
   title: 'сomputer',
   cardName: 'сomputer',
   translate: 'компьютер',
@@ -724,14 +764,16 @@ var itData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'tehnology',
   title: 'spacex',
   cardName: 'spacex',
-  translate: 'пространство x',
+  translate: 'космос',
   guess: 0,
   mistake: 0,
   click: 0,
   percent: 0
 }, {
+  category: 'tehnology',
   title: 'starlink',
   cardName: 'starlink',
   translate: 'звездочка',
@@ -740,6 +782,7 @@ var itData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'tehnology',
   title: 'server',
   cardName: 'server',
   translate: 'сервер',
@@ -748,6 +791,7 @@ var itData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'tehnology',
   title: 'telescope',
   cardName: 'telescope',
   translate: 'телескоп',
@@ -770,6 +814,7 @@ var itData = [{
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sportData", function() { return sportData; });
 var sportData = [{
+  category: 'sport',
   title: 'cycle race',
   cardName: 'cycleRace',
   translate: 'велогонка',
@@ -778,6 +823,7 @@ var sportData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'sport',
   title: 'run',
   cardName: 'run',
   translate: 'бег',
@@ -786,6 +832,7 @@ var sportData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'sport',
   title: 'skiing',
   cardName: 'skiing',
   translate: 'горные лыжи',
@@ -794,14 +841,16 @@ var sportData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'sport',
   title: 'skydiving',
   cardName: 'skydiving',
-  translate: 'прыжки с парашютом',
+  translate: 'парашютизм',
   guess: 0,
   mistake: 0,
   click: 0,
   percent: 0
 }, {
+  category: 'sport',
   title: 'swimming',
   cardName: 'swimming',
   translate: 'плавание',
@@ -810,6 +859,7 @@ var sportData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'sport',
   title: 'box',
   cardName: 'box',
   translate: 'бокс',
@@ -818,6 +868,7 @@ var sportData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'sport',
   title: 'mountaineering',
   cardName: 'mountaineering',
   translate: 'альпинизм',
@@ -826,6 +877,7 @@ var sportData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'sport',
   title: 'fmx',
   cardName: 'fmx',
   translate: 'фмх',
@@ -833,36 +885,6 @@ var sportData = [{
   mistake: 0,
   click: 0,
   percent: 0
-}];
-
-/***/ }),
-
-/***/ "./app/data/statistics.data.js":
-/*!*************************************!*\
-  !*** ./app/data/statistics.data.js ***!
-  \*************************************/
-/*! exports provided: statisticsData */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "statisticsData", function() { return statisticsData; });
-var statisticsData = [{
-  title: 'City'
-}, {
-  title: 'Home'
-}, {
-  title: 'IT'
-}, {
-  title: 'Weather'
-}, {
-  title: 'Sport'
-}, {
-  title: 'Health'
-}, {
-  title: 'Animal'
-}, {
-  title: 'Cars'
 }];
 
 /***/ }),
@@ -878,6 +900,7 @@ var statisticsData = [{
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "weatherData", function() { return weatherData; });
 var weatherData = [{
+  category: 'weather',
   title: 'cloudy',
   cardName: 'cloudy',
   translate: 'облачно',
@@ -886,6 +909,7 @@ var weatherData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'weather',
   title: 'frosty',
   cardName: 'frosty',
   translate: 'морозно',
@@ -894,6 +918,7 @@ var weatherData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'weather',
   title: 'raining',
   cardName: 'raining',
   translate: 'дождливо',
@@ -902,6 +927,7 @@ var weatherData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'weather',
   title: 'snowing',
   cardName: 'snowing',
   translate: 'снежно',
@@ -910,6 +936,7 @@ var weatherData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'weather',
   title: 'sunny',
   cardName: 'sunny',
   translate: 'солнечно',
@@ -918,6 +945,7 @@ var weatherData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'weather',
   title: 'tornados',
   cardName: 'tornados',
   translate: 'торнадо',
@@ -926,6 +954,7 @@ var weatherData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'weather',
   title: 'tunderstorm',
   cardName: 'tunderstorm',
   translate: 'шторм',
@@ -934,6 +963,7 @@ var weatherData = [{
   click: 0,
   percent: 0
 }, {
+  category: 'weather',
   title: 'windy',
   cardName: 'windy',
   translate: 'ветренно',
@@ -1023,15 +1053,33 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "statisticsPageTemplate", function() { return statisticsPageTemplate; });
-/* harmony import */ var _data_index_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/index.data */ "./app/data/index.data.js");
+/* harmony import */ var _utils_storage_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/storage.utils */ "./app/utils/storage.utils.js");
+/* harmony import */ var _data_index_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/index.data */ "./app/data/index.data.js");
+// import { statisticsData } from '../data/index.data';
 
-var contentRow = "\n  <div class=\"main__page  page page--{{class}}\">\n    <div class=\"page__row\">\n      {{cards}}\n    </div>\n  </div>\n  ";
-var cardTemplate = "\n  <div class=\"page__card  card\">\n    <div class=\"card__content\">\n      <p class=\"card__title\">{{title}}</p>\n      <button class=\"card__btn\"></button>\n    </div>\n  </div>";
+
+
+if (!Object(_utils_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameProgress')) {
+  var gameProgress = [];
+
+  for (var key in _data_index_data__WEBPACK_IMPORTED_MODULE_1__) {
+    if (key !== 'categoryData') {
+      gameProgress.push(_data_index_data__WEBPACK_IMPORTED_MODULE_1__[key]);
+    }
+  }
+
+  var tempArr = gameProgress.flat();
+  Object(_utils_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('gameProgress', tempArr);
+}
+
+var statisticsData = Object(_utils_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameProgress');
+var contentRow = "\n  <div class=\"main__page  page page--{{class}} {{class}}\">\n    <div class=\"{{class}}__btn-wrap\">\n      <a class=\"{{class}}__btn {{class}}__btn--repeat\" data-{{class}}=\"repeat\">Repeat difficult words</a>\n      <button class=\"{{class}}__btn {{class}}__btn--reset\" data-{{class}}=\"reset\">Reset</button>\n    </div>\n    <table class=\"{{class}}__table\">\n      <thead >\n        <tr class=\"{{class}}__header\">\n         <th class=\"header__categories\">Categories</th>\n         <th class=\"header__words\">Words</th>\n         <th class=\"header__translation\">Translation</th>\n         <th class=\"header__trained\">Trained</th>\n         <th class=\"header__correct\">Correct</th>\n         <th class=\"header__incorrect\">Incorrect</th>\n         <th class=\"header__percent\">%</th>\n        </tr>\n      </thead>\n      <tbody>\n        {{words}}\n      </tbody>\n    </table>\n  </div>\n  ";
+var cardTemplate = "\n  <tr class=\"{{class}}__row  {{class}}__row--{{cardName}}\">\n    <td class=\"{{class}}__item  item__categories\">{{category}}</td>\n    <td class=\"{{class}}__item  item__words\">{{title}}</td>\n    <td class=\"{{class}}__item  item__translation\">{{translate}}</td>\n    <td class=\"{{class}}__item  item__trained\">{{click}}</td>\n    <td class=\"{{class}}__item  item__correct\">{{guess}}</td>\n    <td class=\"{{class}}__item  item__incorrect\">{{mistake}}</td>\n    <td class=\"{{class}}__item  item__percent\">{{percent}}</td>\n  </tr>";
 var cardTemplateExport = '';
-_data_index_data__WEBPACK_IMPORTED_MODULE_0__["statisticsData"].forEach(function (el) {
-  cardTemplateExport += cardTemplate.replace(/\{{(title)}}/g, el['title']);
+statisticsData.forEach(function (el) {
+  cardTemplateExport += cardTemplate.replace(/\{{(class)}}/g, 'statistics').replace(/\{{(cardName)}}/g, el['cardName']).replace(/\{{(category)}}/g, el['category']).replace(/\{{(title)}}/g, el['title']).replace(/\{{(translate)}}/g, el['translate']).replace(/\{{(click)}}/g, el['click']).replace(/\{{(guess)}}/g, el['guess']).replace(/\{{(mistake)}}/g, el['mistake']).replace(/\{{(percent)}}/g, el['percent']);
 });
-var contentRowExport = contentRow.replace(/\{{(class)}}/g, 'statistics').replace(/\{{(cards)}}/g, cardTemplateExport);
+var contentRowExport = contentRow.replace(/\{{(class)}}/g, 'statistics').replace(/\{{(words)}}/g, cardTemplateExport);
 var statisticsPageTemplate = function statisticsPageTemplate() {
   return contentRowExport;
 };
@@ -1302,7 +1350,9 @@ function checkStateUtils() {
     var gameProgress = [];
 
     for (var key in _data_index_data__WEBPACK_IMPORTED_MODULE_5__) {
-      gameProgress.push(_data_index_data__WEBPACK_IMPORTED_MODULE_5__[key]);
+      if (key !== 'categoryData') {
+        gameProgress.push(_data_index_data__WEBPACK_IMPORTED_MODULE_5__[key]);
+      }
     }
 
     var tempArr = gameProgress.flat();
@@ -1853,7 +1903,7 @@ function showGameStatusUtils() {
     Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('mistake', '0');
     overlay.classList.remove('overlay--active-message');
     text.innerText = '';
-  }, 3000);
+  }, 4000);
 }
 
 /***/ }),

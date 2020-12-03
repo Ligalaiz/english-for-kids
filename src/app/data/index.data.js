@@ -7,7 +7,6 @@ import { healthData } from './health.data';
 import { animalData } from './animal.data';
 import { carsData } from './cars.data';
 import { categoryData } from './category.data';
-import { statisticsData } from './statistics.data';
 
 export {
   cityData,
@@ -19,5 +18,4 @@ export {
   animalData,
   carsData,
   categoryData,
-  statisticsData,
 };

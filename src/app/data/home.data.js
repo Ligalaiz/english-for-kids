@@ -1,5 +1,6 @@
 export const homeData = [
   {
+    category: 'home',
     title: 'living-room',
     cardName: 'livingRoom',
     translate: 'гостиная',
@@ -9,6 +10,7 @@ export const homeData = [
     percent: 0,
   },
   {
+    category: 'home',
     title: 'house',
     cardName: 'house',
     translate: 'дом',
@@ -18,6 +20,7 @@ export const homeData = [
     percent: 0,
   },
   {
+    category: 'home',
     title: 'backyard',
     cardName: 'backyard',
     translate: 'двор',
@@ -27,6 +30,7 @@ export const homeData = [
     percent: 0,
   },
   {
+    category: 'home',
     title: 'pool',
     cardName: 'pool',
     translate: 'бассейн',
@@ -36,6 +40,7 @@ export const homeData = [
     percent: 0,
   },
   {
+    category: 'home',
     title: 'kitchen',
     cardName: 'kitchen',
     translate: 'кухня',
@@ -45,6 +50,7 @@ export const homeData = [
     percent: 0,
   },
   {
+    category: 'home',
     title: 'hall',
     cardName: 'hall',
     translate: 'зал',
@@ -54,6 +60,7 @@ export const homeData = [
     percent: 0,
   },
   {
+    category: 'home',
     title: 'fireplace',
     cardName: 'fireplace',
     translate: 'камин',
@@ -63,6 +70,7 @@ export const homeData = [
     percent: 0,
   },
   {
+    category: 'home',
     title: 'bedroom',
     cardName: 'bedroom',
     translate: 'спальня',

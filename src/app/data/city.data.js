@@ -1,5 +1,6 @@
 export const cityData = [
   {
+    category: 'city',
     title: 'brussels',
     cardName: 'brussels',
     translate: 'брюссель',
@@ -9,6 +10,7 @@ export const cityData = [
     percent: 0,
   },
   {
+    category: 'city',
     title: 'los-angeles',
     cardName: 'losAngeles',
     translate: 'лос-анджелес',
@@ -18,6 +20,7 @@ export const cityData = [
     percent: 0,
   },
   {
+    category: 'city',
     title: 'london',
     cardName: 'london',
     translate: 'лондон',
@@ -27,6 +30,7 @@ export const cityData = [
     percent: 0,
   },
   {
+    category: 'city',
     title: 'minsk',
     cardName: 'minsk',
     translate: 'минск',
@@ -36,6 +40,7 @@ export const cityData = [
     percent: 0,
   },
   {
+    category: 'city',
     title: 'madrid',
     cardName: 'madrid',
     translate: 'мадрид',
@@ -45,6 +50,7 @@ export const cityData = [
     percent: 0,
   },
   {
+    category: 'city',
     title: 'new-york',
     cardName: 'newYork',
     translate: 'нью-йорк',
@@ -54,6 +60,7 @@ export const cityData = [
     percent: 0,
   },
   {
+    category: 'city',
     title: 'paris',
     cardName: 'paris',
     translate: 'париж',
@@ -63,6 +70,7 @@ export const cityData = [
     percent: 0,
   },
   {
+    category: 'city',
     title: 'singapore',
     cardName: 'singapore',
     translate: 'сингапур',

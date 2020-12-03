@@ -1,5 +1,6 @@
 export const animalData = [
   {
+    category: 'animal',
     title: 'bear',
     cardName: 'bear',
     translate: 'медведь',
@@ -9,6 +10,7 @@ export const animalData = [
     percent: 0,
   },
   {
+    category: 'animal',
     title: 'cat',
     cardName: 'cat',
     translate: 'кошка',
@@ -18,6 +20,7 @@ export const animalData = [
     percent: 0,
   },
   {
+    category: 'animal',
     title: 'eagle',
     cardName: 'eagle',
     translate: 'орёл',
@@ -27,6 +30,7 @@ export const animalData = [
     percent: 0,
   },
   {
+    category: 'animal',
     title: 'human',
     cardName: 'human',
     translate: 'человек',
@@ -36,6 +40,7 @@ export const animalData = [
     percent: 0,
   },
   {
+    category: 'animal',
     title: 'killer whale',
     cardName: 'killerWhale',
     translate: 'касатка',
@@ -45,6 +50,7 @@ export const animalData = [
     percent: 0,
   },
   {
+    category: 'animal',
     title: 'purgatorius',
     cardName: 'purgatorius',
     translate: 'пургаториус',
@@ -54,6 +60,7 @@ export const animalData = [
     percent: 0,
   },
   {
+    category: 'animal',
     title: 'dog',
     cardName: 'animal',
     translate: 'собака',
@@ -63,6 +70,7 @@ export const animalData = [
     percent: 0,
   },
   {
+    category: 'animal',
     title: 'tiger',
     cardName: 'tiger',
     translate: 'тигр',
