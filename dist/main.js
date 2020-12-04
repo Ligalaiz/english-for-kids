@@ -182,24 +182,6 @@ Object(_pages_index_pages__WEBPACK_IMPORTED_MODULE_0__["commonPageTemplate"])(do
 
 /***/ }),
 
-/***/ "./app/constants/constants.js":
-/*!************************************!*\
-  !*** ./app/constants/constants.js ***!
-  \************************************/
-/*! exports provided: DELAY, DELAY_MS */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELAY", function() { return DELAY; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELAY_MS", function() { return DELAY_MS; });
-// game
-var DELAY = 3;
-var DELAY_MS = 5000;
-
-
-/***/ }),
-
 /***/ "./app/data/animal.data.js":
 /*!*********************************!*\
   !*** ./app/data/animal.data.js ***!
@@ -1055,33 +1037,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "statisticsPageTemplate", function() { return statisticsPageTemplate; });
 /* harmony import */ var _utils_storage_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/storage.utils */ "./app/utils/storage.utils.js");
 /* harmony import */ var _data_index_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/index.data */ "./app/data/index.data.js");
-// import { statisticsData } from '../data/index.data';
 
 
 
-if (!Object(_utils_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameProgress')) {
-  var gameProgress = [];
+function createstatisticsPage() {
+  if (!Object(_utils_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameProgress')) {
+    var gameProgress = [];
 
-  for (var key in _data_index_data__WEBPACK_IMPORTED_MODULE_1__) {
-    if (key !== 'categoryData') {
-      gameProgress.push(_data_index_data__WEBPACK_IMPORTED_MODULE_1__[key]);
+    for (var key in _data_index_data__WEBPACK_IMPORTED_MODULE_1__) {
+      if (key !== 'categoryData') {
+        gameProgress.push(_data_index_data__WEBPACK_IMPORTED_MODULE_1__[key]);
+      }
     }
+
+    var tempArr = gameProgress.flat();
+    Object(_utils_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('gameProgress', tempArr);
   }
 
-  var tempArr = gameProgress.flat();
-  Object(_utils_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('gameProgress', tempArr);
+  var statisticsData = Object(_utils_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameProgress');
+  var contentRow = "\n  <div class=\"main__page  page page--{{class}} {{class}}\">\n    <div class=\"{{class}}__btn-wrap\">\n      <a class=\"{{class}}__btn {{class}}__btn--repeat\" data-{{class}}=\"repeat\">Repeat difficult words</a>\n      <button class=\"{{class}}__btn {{class}}__btn--reset\" data-{{class}}=\"reset\">Reset</button>\n    </div>\n    <div class=\"{{class}}__table-wrap\">\n      <table class=\"{{class}}__table\">\n        <thead >\n          <tr class=\"{{class}}__header\">\n          <th class=\"header__item header__categories\" title=\"categories\">Categories</th>\n          <th class=\"header__item header__words\" title=\"words\">Words</th>\n          <th class=\"header__item header__translation\" title=\"translation\">Translation</th>\n          <th class=\"header__item header__trained\" title=\"trained\"></th>\n          <th class=\"header__item header__correct\" title=\"correct\"></th>\n          <th class=\"header__item header__incorrect\" title=\"incorrect\"></th>\n          <th class=\"header__item header__percent\" title=\"percent\">%</th>\n          </tr>\n        </thead>\n        <tbody>\n          {{words}}\n        </tbody>\n      </table>\n    </div>\n  </div>\n  ";
+  var cardTemplate = "\n  <tr class=\"{{class}}__row  {{class}}__row--{{cardName}}\">\n    <td class=\"{{class}}__item  item__categories\">{{category}}</td>\n    <td class=\"{{class}}__item  item__words\">{{title}}</td>\n    <td class=\"{{class}}__item  item__translation\">{{translate}}</td>\n    <td class=\"{{class}}__item  item__trained\">{{click}}</td>\n    <td class=\"{{class}}__item  item__correct\">{{guess}}</td>\n    <td class=\"{{class}}__item  item__incorrect\">{{mistake}}</td>\n    <td class=\"{{class}}__item  item__percent\">{{percent}}</td>\n  </tr>";
+  var cardTemplateExport = '';
+  statisticsData.forEach(function (el) {
+    cardTemplateExport += cardTemplate.replace(/\{{(class)}}/g, 'statistics').replace(/\{{(cardName)}}/g, el['cardName']).replace(/\{{(category)}}/g, el['category']).replace(/\{{(title)}}/g, el['title']).replace(/\{{(translate)}}/g, el['translate']).replace(/\{{(click)}}/g, el['click']).replace(/\{{(guess)}}/g, el['guess']).replace(/\{{(mistake)}}/g, el['mistake']).replace(/\{{(percent)}}/g, el['percent']);
+  });
+  var contentRowExport = contentRow.replace(/\{{(class)}}/g, 'statistics').replace(/\{{(words)}}/g, cardTemplateExport);
+  return contentRowExport;
 }
 
-var statisticsData = Object(_utils_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameProgress');
-var contentRow = "\n  <div class=\"main__page  page page--{{class}} {{class}}\">\n    <div class=\"{{class}}__btn-wrap\">\n      <a class=\"{{class}}__btn {{class}}__btn--repeat\" data-{{class}}=\"repeat\">Repeat difficult words</a>\n      <button class=\"{{class}}__btn {{class}}__btn--reset\" data-{{class}}=\"reset\">Reset</button>\n    </div>\n    <div class=\"{{class}}__table-wrap\">\n      <table class=\"{{class}}__table\">\n        <thead >\n          <tr class=\"{{class}}__header\">\n          <th class=\"header__item header__categories\" data-title=\"categories\">Categories</th>\n          <th class=\"header__item header__words\" data-title=\"words\">Words</th>\n          <th class=\"header__item header__translation\" data-title=\"translation\">Translation</th>\n          <th class=\"header__item header__trained\" data-title=\"trained\"></th>\n          <th class=\"header__item header__correct\" data-title=\"correct\"></th>\n          <th class=\"header__item header__incorrect\" data-title=\"incorrect\"></th>\n          <th class=\"header__item header__percent\" data-title=\"percent\">%</th>\n          </tr>\n        </thead>\n        <tbody>\n          {{words}}\n        </tbody>\n      </table>\n    </div>\n  </div>\n  ";
-var cardTemplate = "\n  <tr class=\"{{class}}__row  {{class}}__row--{{cardName}}\">\n    <td class=\"{{class}}__item  item__categories\">{{category}}</td>\n    <td class=\"{{class}}__item  item__words\">{{title}}</td>\n    <td class=\"{{class}}__item  item__translation\">{{translate}}</td>\n    <td class=\"{{class}}__item  item__trained\">{{click}}</td>\n    <td class=\"{{class}}__item  item__correct\">{{guess}}</td>\n    <td class=\"{{class}}__item  item__incorrect\">{{mistake}}</td>\n    <td class=\"{{class}}__item  item__percent\">{{percent}}</td>\n  </tr>";
-var cardTemplateExport = '';
-statisticsData.forEach(function (el) {
-  cardTemplateExport += cardTemplate.replace(/\{{(class)}}/g, 'statistics').replace(/\{{(cardName)}}/g, el['cardName']).replace(/\{{(category)}}/g, el['category']).replace(/\{{(title)}}/g, el['title']).replace(/\{{(translate)}}/g, el['translate']).replace(/\{{(click)}}/g, el['click']).replace(/\{{(guess)}}/g, el['guess']).replace(/\{{(mistake)}}/g, el['mistake']).replace(/\{{(percent)}}/g, el['percent']);
-});
-var contentRowExport = contentRow.replace(/\{{(class)}}/g, 'statistics').replace(/\{{(words)}}/g, cardTemplateExport);
 var statisticsPageTemplate = function statisticsPageTemplate() {
-  return contentRowExport;
+  return createstatisticsPage();
 };
 
 /***/ }),
@@ -1346,6 +1331,8 @@ function checkStateUtils() {
     Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('startGame', 'off');
   }
 
+  if (!Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('repeat')) Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('repeat', []);
+
   if (!Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameProgress')) {
     var gameProgress = [];
 
@@ -1487,6 +1474,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _menuSwitcher_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./menuSwitcher.utils */ "./app/utils/menuSwitcher.utils.js");
 /* harmony import */ var _storage_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./storage.utils */ "./app/utils/storage.utils.js");
 /* harmony import */ var _game_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./game.utils */ "./app/utils/game.utils.js");
+/* harmony import */ var _statistics_addResult_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./statistics/addResult.utils */ "./app/utils/statistics/addResult.utils.js");
+/* harmony import */ var _statistics_statisticsReset_utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./statistics/statisticsReset.utils */ "./app/utils/statistics/statisticsReset.utils.js");
+
+
 
 
 
@@ -1503,6 +1494,10 @@ function handler(e, routerUtils) {
       Object(_menuSwitcher_utils__WEBPACK_IMPORTED_MODULE_3__["menuSwitcherUtils"])();
     }
 
+    if (target.classList.value.match(/statistics__btn--reset/)) {
+      Object(_statistics_statisticsReset_utils__WEBPACK_IMPORTED_MODULE_7__["default"])();
+    }
+
     if (target.classList.value.match(/nav__link|header__logo|overlay--active/)) {
       if (document.querySelector('.nav').classList.contains('nav--active')) {
         Object(_menuSwitcher_utils__WEBPACK_IMPORTED_MODULE_3__["menuCloseUtils"])();
@@ -1517,6 +1512,10 @@ function handler(e, routerUtils) {
     if (target.dataset.sound && Object(_storage_utils__WEBPACK_IMPORTED_MODULE_4__["get"])('game') === 'off') {
       Object(_cardsSound_utils__WEBPACK_IMPORTED_MODULE_0__["default"])({
         target: target
+      });
+      Object(_statistics_addResult_utils__WEBPACK_IMPORTED_MODULE_6__["default"])({
+        target: target,
+        type: 'click'
       });
     }
 
@@ -1644,6 +1643,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _showGameMessage_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./showGameMessage.utils */ "./app/utils/game/showGameMessage.utils.js");
 /* harmony import */ var _app_routes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../app.routes */ "./app/app.routes.js");
 /* harmony import */ var _router_utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../router.utils */ "./app/utils/router.utils.js");
+/* harmony import */ var _statistics_addResult_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../statistics/addResult.utils */ "./app/utils/statistics/addResult.utils.js");
+
 
 
 
@@ -1667,7 +1668,10 @@ function clickHandlerUtils(_ref) {
     if (target.closest('.card').dataset.sound === songArray[count]) {
       Object(_createElement_utils__WEBPACK_IMPORTED_MODULE_2__["default"])('div', 'stars__item stars__item--true', null, starsField);
       target.closest('.card').classList.add('card--disabled');
-      console.log('добавляем в score успех');
+      Object(_statistics_addResult_utils__WEBPACK_IMPORTED_MODULE_8__["default"])({
+        target: target,
+        type: 'guess'
+      });
       Object(_cardsSound_utils__WEBPACK_IMPORTED_MODULE_0__["default"])({
         sound: 'bell',
         path: 'app'
@@ -1680,7 +1684,10 @@ function clickHandlerUtils(_ref) {
       });
       Object(_createElement_utils__WEBPACK_IMPORTED_MODULE_2__["default"])('div', 'stars__item stars__item--false', null, starsField);
       Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["set"])('mistake', "".concat(Number(Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["get"])('mistake')) + 1));
-      console.log('добавляем в score ошибку');
+      Object(_statistics_addResult_utils__WEBPACK_IMPORTED_MODULE_8__["default"])({
+        current: songArray[count],
+        type: 'mistake'
+      });
     }
 
     songArray.pop();
@@ -1753,10 +1760,8 @@ function clickHandlerUtils(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return gameLogicUtils; });
 /* harmony import */ var _storage_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../storage.utils */ "./app/utils/storage.utils.js");
-/* harmony import */ var _gameTimer_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./gameTimer.utils */ "./app/utils/game/gameTimer.utils.js");
-/* harmony import */ var _constants_constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../constants/constants */ "./app/constants/constants.js");
-/* harmony import */ var _cardsSound_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../cardsSound.utils */ "./app/utils/cardsSound.utils.js");
-/* harmony import */ var _clickHandler_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./clickHandler.utils */ "./app/utils/game/clickHandler.utils.js");
+/* harmony import */ var _cardsSound_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../cardsSound.utils */ "./app/utils/cardsSound.utils.js");
+/* harmony import */ var _clickHandler_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./clickHandler.utils */ "./app/utils/game/clickHandler.utils.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -1773,8 +1778,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 
-
-
 function toDo() {
   var cards = document.querySelectorAll('.card');
 
@@ -1786,11 +1789,11 @@ function toDo() {
 
   Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('gameArray', songArray);
   var count = cards.length - 1;
-  Object(_cardsSound_utils__WEBPACK_IMPORTED_MODULE_3__["default"])({
+  Object(_cardsSound_utils__WEBPACK_IMPORTED_MODULE_1__["default"])({
     path: Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('page'),
     sound: songArray[count]
   });
-  Object(_clickHandler_utils__WEBPACK_IMPORTED_MODULE_4__["default"])({
+  Object(_clickHandler_utils__WEBPACK_IMPORTED_MODULE_2__["default"])({
     cards: cards,
     count: count,
     songArray: songArray
@@ -1799,47 +1802,8 @@ function toDo() {
 
 function gameLogicUtils() {
   if (Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('game') === 'on') {
-    // gameTimerUtils(DELAY);
-    // setTimeout(() => toDo(), DELAY_MS);
     toDo();
   }
-}
-
-/***/ }),
-
-/***/ "./app/utils/game/gameTimer.utils.js":
-/*!*******************************************!*\
-  !*** ./app/utils/game/gameTimer.utils.js ***!
-  \*******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return gameTimerUtils; });
-/* harmony import */ var _cardsSound_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../cardsSound.utils */ "./app/utils/cardsSound.utils.js");
-
-function gameTimerUtils(DELAY) {
-  var timer = document.querySelector('.timer__wrap'),
-      timerTable = document.querySelector('.timer');
-  timer.classList.add('timer__wrap--active');
-  timerTable.textContent = DELAY;
-  var timerSetInterval = setInterval(function () {
-    timerTable.textContent = DELAY--;
-    Object(_cardsSound_utils__WEBPACK_IMPORTED_MODULE_0__["default"])({
-      sound: 'timer',
-      path: 'app'
-    });
-
-    if (DELAY < 0) {
-      clearInterval(timerSetInterval);
-      Object(_cardsSound_utils__WEBPACK_IMPORTED_MODULE_0__["default"])({
-        sound: 'bell',
-        path: 'app'
-      });
-      timer.classList.remove('timer__wrap--active');
-    }
-  }, 1000);
 }
 
 /***/ }),
@@ -2026,6 +1990,64 @@ var routerUtils = {
     document.body.querySelector('.main').innerHTML = _app_routes__WEBPACK_IMPORTED_MODULE_0__["templatesRoutes"][routeType]();
   }
 };
+
+/***/ }),
+
+/***/ "./app/utils/statistics/addResult.utils.js":
+/*!*************************************************!*\
+  !*** ./app/utils/statistics/addResult.utils.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return addResultUtils; });
+/* harmony import */ var _storage_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../storage.utils */ "./app/utils/storage.utils.js");
+
+function addResultUtils(_ref) {
+  var target = _ref.target,
+      type = _ref.type,
+      current = _ref.current;
+  var gameProgress = Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameProgress');
+  var value = current ? current : target.dataset.name;
+  var targetCard = gameProgress.find(function (item) {
+    return item.cardName === value;
+  });
+  targetCard["".concat(type)] += 1;
+  var currentGuess = targetCard['guess'],
+      currentMistake = targetCard['mistake'];
+  targetCard["percent"] = currentGuess === 0 ? 0 : Math.floor(currentGuess * 100 / (currentGuess + currentMistake));
+  Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('gameProgress', gameProgress);
+}
+
+/***/ }),
+
+/***/ "./app/utils/statistics/statisticsReset.utils.js":
+/*!*******************************************************!*\
+  !*** ./app/utils/statistics/statisticsReset.utils.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return statisticsResetUtils; });
+/* harmony import */ var _storage_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../storage.utils */ "./app/utils/storage.utils.js");
+/* harmony import */ var _router_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../router.utils */ "./app/utils/router.utils.js");
+
+
+function statisticsResetUtils() {
+  var gameProgress = Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameProgress');
+  gameProgress.forEach(function (item) {
+    item.guess = 0;
+    item.mistake = 0;
+    item.click = 0;
+    item.percent = 0;
+  });
+  Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('gameProgress', gameProgress);
+  _router_utils__WEBPACK_IMPORTED_MODULE_1__["routerUtils"].set('statistics');
+}
 
 /***/ }),
 

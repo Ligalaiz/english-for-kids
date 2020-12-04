@@ -4,6 +4,8 @@ import cardsRotateUtils from './cardsRotate.utils';
 import { menuSwitcherUtils, menuCloseUtils, homeBtnUtils } from './menuSwitcher.utils';
 import { get } from './storage.utils';
 import gameUtils from './game.utils';
+import addResultUtils from './statistics/addResult.utils';
+import statisticsResetUtils from './statistics/statisticsReset.utils';
 
 
 function handler(e, routerUtils) {
@@ -12,6 +14,9 @@ function handler(e, routerUtils) {
   if (type.match(/click/)) {
     if (target.classList.value.match(/header__btn/)) {
       menuSwitcherUtils();
+    }
+    if (target.classList.value.match(/statistics__btn--reset/)) {
+      statisticsResetUtils();
     }
 
     if (
@@ -25,6 +30,7 @@ function handler(e, routerUtils) {
     cardsRenderUtils({ target, routerUtils });
     if (target.dataset.sound && get('game') === 'off') {
       cardsSoundUtils({target});
+      addResultUtils({target, type: 'click'});
     }
 
     setTimeout(() => {

@@ -244,10 +244,6 @@
 }
 
 .statistics {
-  &__table-wrap {
-    overflow-x: scroll;
-  }
-
   &__table {
     min-width: 478px;
     border-radius: 12px;
@@ -265,12 +261,13 @@
     color: $white-color;
 
     background-color: $brand-color;
+    opacity: 0.7;
   }
 
   &__row {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    border-bottom: 1px solid $white-color;
+    border-bottom: 1px solid $grey-color--lightX;
 
     transition: all 0.2s linear;
     &:hover {
@@ -306,6 +303,7 @@
 
     box-shadow: 0 7px 15px rgba(0, 0, 0, 0.25), 0 4px 6px rgba(0, 0, 0, 0.22);
     outline: none;
+    opacity: 0.7;
     cursor: pointer;
     transition: all 0.3s linear;
   }
@@ -330,26 +328,6 @@
   &__incorrect,
   &__percent {
     text-align: center;
-  }
-}
-
-.header__item {
-  position: relative;
-  &:hover::after {
-    content: attr(data-title);
-    position: absolute;
-    left: 69%;
-    top: -62%;
-    padding: 3px;
-    border: 1px solid #333;
-
-    color: $text-color--dark;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-
-    background: $white-color;
-
-    z-index: 1;
   }
 }
 
@@ -413,6 +391,15 @@
     margin-bottom: 10px;
   }
 }
+
+@media (max-width: 900px) {
+  .statistics {
+    &__table-wrap {
+      overflow-x: scroll;
+    }
+  }
+}
+
 @media (max-width: 844px) {
   .card {
     min-width: 180px;

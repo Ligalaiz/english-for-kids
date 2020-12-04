@@ -584,9 +584,6 @@ input:checked + .slider:before {
   .game__btn--active {
     visibility: visible; }
 
-.statistics__table-wrap {
-  overflow-x: scroll; }
-
 .statistics__table {
   min-width: 478px;
   border-radius: 12px;
@@ -599,12 +596,13 @@ input:checked + .slider:before {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   color: #ffffff;
-  background-color: #28c38a; }
+  background-color: #28c38a;
+  opacity: 0.7; }
 
 .statistics__row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid #b7b1b117;
   transition: all 0.2s linear; }
   .statistics__row:hover {
     background-color: #28c38a99; }
@@ -629,6 +627,7 @@ input:checked + .slider:before {
   font-size: 20px;
   box-shadow: 0 7px 15px rgba(0, 0, 0, 0.25), 0 4px 6px rgba(0, 0, 0, 0.22);
   outline: none;
+  opacity: 0.7;
   cursor: pointer;
   transition: all 0.3s linear; }
 
@@ -636,7 +635,7 @@ input:checked + .slider:before {
   background-color: #28c38a; }
 
 .statistics__btn--reset {
-  background-color: #ef0c36ab; }
+  background-color: #ef0c36fc; }
 
 .item__categories {
   min-width: 85px; }
@@ -646,21 +645,6 @@ input:checked + .slider:before {
 
 .item__trained, .item__correct, .item__incorrect, .item__percent {
   text-align: center; }
-
-.header__item {
-  position: relative; }
-  .header__item:hover::after {
-    content: attr(data-title);
-    position: absolute;
-    left: 69%;
-    top: -62%;
-    padding: 3px;
-    border: 1px solid #333;
-    color: #37383c;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    background: #ffffff;
-    z-index: 1; }
 
 .header__categories {
   min-width: 85px; }
@@ -680,10 +664,10 @@ input:checked + .slider:before {
   background-image: url(c5b5cbac8b61a53cdb169c48ba402425.svg); }
 
 .header__incorrect {
-  background-image: url(7b177d33eaf01594914b5b122ddade8c.svg); }
+  background-image: url(d7165b97a825fcd429e928ed492c704a.svg); }
 
 .header__trained {
-  background-image: url(6312370ed619d9f9a18b7196a86ae346.svg); }
+  background-image: url(d71712f093465f0601bb9f69dacd61dd.svg); }
 
 @media (max-width: 1465px) {
   .wrap {
@@ -707,6 +691,10 @@ input:checked + .slider:before {
     display: block;
     position: relative;
     margin-bottom: 10px; } }
+
+@media (max-width: 900px) {
+  .statistics__table-wrap {
+    overflow-x: scroll; } }
 
 @media (max-width: 844px) {
   .card {

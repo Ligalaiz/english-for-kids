@@ -10,10 +10,14 @@ export default function checkStateUtils() {
     set('page', 'category');
     set('game', 'off');
   }
+
   if (!get('mistake')) set('mistake', '0');
+
   if (!get('startGame')) {
     set('startGame', 'off');
   }
+
+  if (!get('repeat')) set('repeat', []);
 
   if (!get('gameProgress')) {
     let gameProgress = [];

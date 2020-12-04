@@ -6,6 +6,7 @@ import changeCardsStyleUtils from '../changeCardsStyle.utils';
 import showGameMessageUtils from './showGameMessage.utils';
 import { pageTypeRoutes } from '../../app.routes';
 import { routerUtils } from '../router.utils';
+import addResultUtils from '../statistics/addResult.utils';
 
 export default function clickHandlerUtils({ cards, count, songArray }) {
   const starsField = document.querySelector('.stars');
@@ -26,7 +27,7 @@ export default function clickHandlerUtils({ cards, count, songArray }) {
       );
       target.closest('.card').classList.add('card--disabled');
 
-      console.log('добавляем в score успех');
+      addResultUtils({target, type: 'guess'});
 
       cardsSoundUtils({ sound: 'bell', path: 'app' });
       this.removeEventListener('click', listener);
@@ -39,7 +40,7 @@ export default function clickHandlerUtils({ cards, count, songArray }) {
         starsField
       );
       set('mistake', `${Number(get('mistake')) + 1}`);
-      console.log('добавляем в score ошибку');
+      addResultUtils({current:songArray[count], type: 'mistake'});
     }
     songArray.pop();
     set('gameArray', songArray);
@@ -72,7 +73,7 @@ export default function clickHandlerUtils({ cards, count, songArray }) {
       cards.forEach((item) => item.classList.remove('card--disabled'));
 
       set('startGame', 'off');
-      
+
       routerUtils.set(pageTypeRoutes.defaultPageType);
     }
   }

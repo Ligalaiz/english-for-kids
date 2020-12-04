@@ -1,6 +1,4 @@
 import { get, set } from '../storage.utils';
-import gameTimerUtils from './gameTimer.utils';
-import { DELAY, DELAY_MS } from '../../constants/constants';
 import cardsSoundUtils from '../cardsSound.utils';
 import clickHandlerUtils from './clickHandler.utils';
 
@@ -20,8 +18,6 @@ function toDo() {
 
 export default function gameLogicUtils() {
   if (get('game') === 'on') {
-    // gameTimerUtils(DELAY);
-    // setTimeout(() => toDo(), DELAY_MS);
     toDo();
   }
 }
