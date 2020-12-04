@@ -584,7 +584,11 @@ input:checked + .slider:before {
   .game__btn--active {
     visibility: visible; }
 
+.statistics__table-wrap {
+  overflow-x: scroll; }
+
 .statistics__table {
+  min-width: 478px;
   border-radius: 12px;
   border-collapse: collapse;
   background-color: #ffffff60; }
@@ -600,6 +604,7 @@ input:checked + .slider:before {
 .statistics__row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  border-bottom: 1px solid #ffffff;
   transition: all 0.2s linear; }
   .statistics__row:hover {
     background-color: #28c38a99; }
@@ -633,8 +638,52 @@ input:checked + .slider:before {
 .statistics__btn--reset {
   background-color: #ef0c36ab; }
 
+.item__categories {
+  min-width: 85px; }
+
+.item__words, .item__translation {
+  min-width: 130px; }
+
 .item__trained, .item__correct, .item__incorrect, .item__percent {
   text-align: center; }
+
+.header__item {
+  position: relative; }
+  .header__item:hover::after {
+    content: attr(data-title);
+    position: absolute;
+    left: 69%;
+    top: -62%;
+    padding: 3px;
+    border: 1px solid #333;
+    color: #37383c;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    background: #ffffff;
+    z-index: 1; }
+
+.header__categories {
+  min-width: 85px; }
+
+.header__words,
+.header__translation {
+  min-width: 130px; }
+
+.header__correct,
+.header__incorrect,
+.header__trained {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px; }
+
+.header__correct {
+  background-image: url(c5b5cbac8b61a53cdb169c48ba402425.svg); }
+
+.header__incorrect {
+  background-image: url(7b177d33eaf01594914b5b122ddade8c.svg); }
+
+.header__trained {
+  background-image: url(6312370ed619d9f9a18b7196a86ae346.svg); }
 
 @media (max-width: 1465px) {
   .wrap {
@@ -666,6 +715,18 @@ input:checked + .slider:before {
     padding-top: 150px; }
     .card__btn {
       left: 0; } }
+
+@media (max-width: 773px) {
+  .statistics__table-wrap {
+    width: 600px; } }
+
+@media (max-width: 600px) {
+  .statistics__table-wrap {
+    width: 400px; } }
+
+@media (max-width: 400px) {
+  .statistics__table-wrap {
+    width: 316px; } }
 
 .header {
   position: fixed;

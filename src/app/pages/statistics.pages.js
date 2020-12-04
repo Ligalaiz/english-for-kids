@@ -21,22 +21,24 @@ let contentRow = `
       <a class="{{class}}__btn {{class}}__btn--repeat" data-{{class}}="repeat">Repeat difficult words</a>
       <button class="{{class}}__btn {{class}}__btn--reset" data-{{class}}="reset">Reset</button>
     </div>
-    <table class="{{class}}__table">
-      <thead >
-        <tr class="{{class}}__header">
-         <th class="header__categories">Categories</th>
-         <th class="header__words">Words</th>
-         <th class="header__translation">Translation</th>
-         <th class="header__trained">Trained</th>
-         <th class="header__correct">Correct</th>
-         <th class="header__incorrect">Incorrect</th>
-         <th class="header__percent">%</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{words}}
-      </tbody>
-    </table>
+    <div class="{{class}}__table-wrap">
+      <table class="{{class}}__table">
+        <thead >
+          <tr class="{{class}}__header">
+          <th class="header__item header__categories" data-title="categories">Categories</th>
+          <th class="header__item header__words" data-title="words">Words</th>
+          <th class="header__item header__translation" data-title="translation">Translation</th>
+          <th class="header__item header__trained" data-title="trained"></th>
+          <th class="header__item header__correct" data-title="correct"></th>
+          <th class="header__item header__incorrect" data-title="incorrect"></th>
+          <th class="header__item header__percent" data-title="percent">%</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{words}}
+        </tbody>
+      </table>
+    </div>
   </div>
   `;
 

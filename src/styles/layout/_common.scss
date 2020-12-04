@@ -244,7 +244,12 @@
 }
 
 .statistics {
+  &__table-wrap {
+    overflow-x: scroll;
+  }
+
   &__table {
+    min-width: 478px;
     border-radius: 12px;
     border-collapse: collapse;
 
@@ -265,6 +270,8 @@
   &__row {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    border-bottom: 1px solid $white-color;
+
     transition: all 0.2s linear;
     &:hover {
       background-color: $brand-color--light;
@@ -311,12 +318,65 @@
 }
 
 .item {
+  &__categories {
+    min-width: 85px;
+  }
+  &__words,
+  &__translation {
+    min-width: 130px;
+  }
   &__trained,
   &__correct,
   &__incorrect,
   &__percent {
     text-align: center;
   }
+}
+
+.header__item {
+  position: relative;
+  &:hover::after {
+    content: attr(data-title);
+    position: absolute;
+    left: 69%;
+    top: -62%;
+    padding: 3px;
+    border: 1px solid #333;
+
+    color: $text-color--dark;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+
+    background: $white-color;
+
+    z-index: 1;
+  }
+}
+
+.header__categories {
+  min-width: 85px;
+}
+.header__words,
+.header__translation {
+  min-width: 130px;
+}
+
+.header__correct,
+.header__incorrect,
+.header__trained {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+}
+
+.header__correct {
+  background-image: url('../assets/image/icon/guess.svg');
+}
+.header__incorrect {
+  background-image: url('../assets/image/icon/error.svg');
+}
+.header__trained {
+  background-image: url('../assets/image/icon/train.svg');
 }
 
 @media (max-width: 1465px) {
@@ -360,6 +420,30 @@
     padding-top: 150px;
     &__btn {
       left: 0;
+    }
+  }
+}
+
+@media (max-width: 773px) {
+  .statistics {
+    &__table-wrap {
+      width: 600px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .statistics {
+    &__table-wrap {
+      width: 400px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .statistics {
+    &__table-wrap {
+      width: 316px;
     }
   }
 }
