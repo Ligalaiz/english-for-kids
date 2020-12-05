@@ -1,12 +1,17 @@
 import cardsSoundUtils from './cardsSound.utils';
 import cardsRenderUtils from './cardsRender.utils';
 import cardsRotateUtils from './cardsRotate.utils';
-import { menuSwitcherUtils, menuCloseUtils, homeBtnUtils } from './menuSwitcher.utils';
+import {
+  menuSwitcherUtils,
+  menuCloseUtils,
+  homeBtnUtils,
+} from './menuSwitcher.utils';
 import { get } from './storage.utils';
 import gameUtils from './game.utils';
 import addResultUtils from './statistics/addResult.utils';
 import statisticsResetUtils from './statistics/statisticsReset.utils';
-
+import repeatDifficultWordsUtils from './statistics/repeatDifficultWords.utils';
+import sortStatisticDataUtils from './statistics/sortStatisticData.utils';
 
 function handler(e, routerUtils) {
   const { target, type } = e;
@@ -14,9 +19,6 @@ function handler(e, routerUtils) {
   if (type.match(/click/)) {
     if (target.classList.value.match(/header__btn/)) {
       menuSwitcherUtils();
-    }
-    if (target.classList.value.match(/statistics__btn--reset/)) {
-      statisticsResetUtils();
     }
 
     if (
@@ -29,8 +31,8 @@ function handler(e, routerUtils) {
 
     cardsRenderUtils({ target, routerUtils });
     if (target.dataset.sound && get('game') === 'off') {
-      cardsSoundUtils({target});
-      addResultUtils({target, type: 'click'});
+      cardsSoundUtils({ target });
+      addResultUtils({ target, type: 'click' });
     }
 
     setTimeout(() => {
@@ -43,6 +45,9 @@ function handler(e, routerUtils) {
   }
 
   if (type.match(/mousedown|mouseup|mouseleave|change/)) {
+    repeatDifficultWordsUtils(target, type);
+    sortStatisticDataUtils(target, type);
+    statisticsResetUtils(target, type);
     cardsRotateUtils(target, type);
     homeBtnUtils(target, type);
     gameUtils(target, type);

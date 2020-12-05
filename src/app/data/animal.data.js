@@ -23,7 +23,7 @@ export const animalData = [
     category: 'animal',
     title: 'eagle',
     cardName: 'eagle',
-    translate: 'орёл',
+    translate: 'орел',
     guess: 0,
     mistake: 0,
     click: 0,

@@ -214,7 +214,7 @@ var animalData = [{
   category: 'animal',
   title: 'eagle',
   cardName: 'eagle',
-  translate: 'орёл',
+  translate: 'орел',
   guess: 0,
   mistake: 0,
   click: 0,
@@ -738,8 +738,8 @@ var itData = [{
   percent: 0
 }, {
   category: 'tehnology',
-  title: 'сomputer',
-  cardName: 'сomputer',
+  title: 'computer',
+  cardName: 'computer',
   translate: 'компьютер',
   guess: 0,
   mistake: 0,
@@ -1476,6 +1476,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _game_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./game.utils */ "./app/utils/game.utils.js");
 /* harmony import */ var _statistics_addResult_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./statistics/addResult.utils */ "./app/utils/statistics/addResult.utils.js");
 /* harmony import */ var _statistics_statisticsReset_utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./statistics/statisticsReset.utils */ "./app/utils/statistics/statisticsReset.utils.js");
+/* harmony import */ var _statistics_repeatDifficultWords_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./statistics/repeatDifficultWords.utils */ "./app/utils/statistics/repeatDifficultWords.utils.js");
+/* harmony import */ var _statistics_sortStatisticData_utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./statistics/sortStatisticData.utils */ "./app/utils/statistics/sortStatisticData.utils.js");
+
+
 
 
 
@@ -1492,10 +1496,6 @@ function handler(e, routerUtils) {
   if (type.match(/click/)) {
     if (target.classList.value.match(/header__btn/)) {
       Object(_menuSwitcher_utils__WEBPACK_IMPORTED_MODULE_3__["menuSwitcherUtils"])();
-    }
-
-    if (target.classList.value.match(/statistics__btn--reset/)) {
-      Object(_statistics_statisticsReset_utils__WEBPACK_IMPORTED_MODULE_7__["default"])();
     }
 
     if (target.classList.value.match(/nav__link|header__logo|overlay--active/)) {
@@ -1529,6 +1529,9 @@ function handler(e, routerUtils) {
   }
 
   if (type.match(/mousedown|mouseup|mouseleave|change/)) {
+    Object(_statistics_repeatDifficultWords_utils__WEBPACK_IMPORTED_MODULE_8__["default"])(target, type);
+    Object(_statistics_sortStatisticData_utils__WEBPACK_IMPORTED_MODULE_9__["default"])(target, type);
+    Object(_statistics_statisticsReset_utils__WEBPACK_IMPORTED_MODULE_7__["default"])(target, type);
     Object(_cardsRotate_utils__WEBPACK_IMPORTED_MODULE_2__["default"])(target, type);
     Object(_menuSwitcher_utils__WEBPACK_IMPORTED_MODULE_3__["homeBtnUtils"])(target, type);
     Object(_game_utils__WEBPACK_IMPORTED_MODULE_5__["default"])(target, type);
@@ -2023,6 +2026,219 @@ function addResultUtils(_ref) {
 
 /***/ }),
 
+/***/ "./app/utils/statistics/animationBtn.utils.js":
+/*!****************************************************!*\
+  !*** ./app/utils/statistics/animationBtn.utils.js ***!
+  \****************************************************/
+/*! exports provided: addAnimationBtn, removeAnimationBtn */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addAnimationBtn", function() { return addAnimationBtn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeAnimationBtn", function() { return removeAnimationBtn; });
+function addAnimationBtn(target) {
+  target.classList.add('statistics__btn--active');
+}
+
+function removeAnimationBtn(target) {
+  target.classList.remove('statistics__btn--active');
+}
+
+
+
+/***/ }),
+
+/***/ "./app/utils/statistics/repeatDifficultWords.utils.js":
+/*!************************************************************!*\
+  !*** ./app/utils/statistics/repeatDifficultWords.utils.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return repeatDifficultWordsUtils; });
+/* harmony import */ var _animationBtn_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animationBtn.utils */ "./app/utils/statistics/animationBtn.utils.js");
+
+function repeatDifficultWordsUtils(target, type) {
+  if (target.classList.value.match(/statistics__btn--repeat/)) {
+    if (type.match(/mousedown/)) {
+      Object(_animationBtn_utils__WEBPACK_IMPORTED_MODULE_0__["addAnimationBtn"])(target);
+    }
+
+    if (type.match(/mouseup/)) {
+      Object(_animationBtn_utils__WEBPACK_IMPORTED_MODULE_0__["removeAnimationBtn"])(target);
+    }
+  }
+}
+
+/***/ }),
+
+/***/ "./app/utils/statistics/sort.utils.js":
+/*!********************************************!*\
+  !*** ./app/utils/statistics/sort.utils.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return sort; });
+function sort(_ref) {
+  var arr = _ref.arr,
+      type = _ref.type,
+      direction = _ref.direction;
+
+  function forward() {
+    arr.sort(function (a, b) {
+      if (a[type] < b[type]) {
+        return -1;
+      }
+
+      if (a[type] > b[type]) {
+        return 1;
+      }
+
+      return 0;
+    });
+    return arr;
+  }
+
+  function reverse() {
+    arr.sort(function (a, b) {
+      if (a[type] < b[type]) {
+        return 1;
+      }
+
+      if (a[type] > b[type]) {
+        return -1;
+      }
+
+      return 0;
+    });
+    return arr;
+  }
+
+  return direction === 'forward' ? forward() : reverse();
+}
+
+/***/ }),
+
+/***/ "./app/utils/statistics/sortStatisticData.utils.js":
+/*!*********************************************************!*\
+  !*** ./app/utils/statistics/sortStatisticData.utils.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return sortStatisticDataUtils; });
+/* harmony import */ var _animationBtn_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animationBtn.utils */ "./app/utils/statistics/animationBtn.utils.js");
+/* harmony import */ var _storage_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../storage.utils */ "./app/utils/storage.utils.js");
+/* harmony import */ var _router_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../router.utils */ "./app/utils/router.utils.js");
+/* harmony import */ var _sort_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sort.utils */ "./app/utils/statistics/sort.utils.js");
+
+
+
+
+
+function changeFlage(isForward, type) {
+  isForward[type] = isForward[type] === 'forward' ? 'reverse' : 'forward';
+} //TODO: бросить  в константу
+
+
+var isForward = {
+  category: 'forward',
+  title: 'forward',
+  translate: 'forward',
+  click: 'forward',
+  guess: 'forward',
+  mistake: 'forward',
+  percent: 'forward'
+};
+function sortStatisticDataUtils(target, type) {
+  if (target.classList.value.match(/header__item/)) {
+    if (type.match(/mousedown/)) {
+      Object(_animationBtn_utils__WEBPACK_IMPORTED_MODULE_0__["addAnimationBtn"])(target);
+      var gameProgress = Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["get"])('gameProgress');
+
+      if (target.classList.value.match(/header__categories/)) {
+        Object(_sort_utils__WEBPACK_IMPORTED_MODULE_3__["default"])({
+          arr: gameProgress,
+          type: 'category',
+          direction: isForward.category
+        });
+        changeFlage(isForward, 'category');
+      }
+
+      if (target.classList.value.match(/header__words/)) {
+        changeFlage(isForward, 'title');
+        Object(_sort_utils__WEBPACK_IMPORTED_MODULE_3__["default"])({
+          arr: gameProgress,
+          type: 'title',
+          direction: isForward.title
+        });
+      }
+
+      if (target.classList.value.match(/header__translation/)) {
+        changeFlage(isForward, 'translate');
+        Object(_sort_utils__WEBPACK_IMPORTED_MODULE_3__["default"])({
+          arr: gameProgress,
+          type: 'translate',
+          direction: isForward.translate
+        });
+      }
+
+      if (target.classList.value.match(/header__trained/)) {
+        changeFlage(isForward, 'click');
+        Object(_sort_utils__WEBPACK_IMPORTED_MODULE_3__["default"])({
+          arr: gameProgress,
+          type: 'click',
+          direction: isForward.click
+        });
+      }
+
+      if (target.classList.value.match(/header__correct/)) {
+        changeFlage(isForward, 'guess');
+        Object(_sort_utils__WEBPACK_IMPORTED_MODULE_3__["default"])({
+          arr: gameProgress,
+          type: 'guess',
+          direction: isForward.guess
+        });
+      }
+
+      if (target.classList.value.match(/header__incorrect/)) {
+        changeFlage(isForward, 'mistake');
+        Object(_sort_utils__WEBPACK_IMPORTED_MODULE_3__["default"])({
+          arr: gameProgress,
+          type: 'mistake',
+          direction: isForward.mistake
+        });
+      }
+
+      if (target.classList.value.match(/header__percent/)) {
+        changeFlage(isForward, 'percent');
+        Object(_sort_utils__WEBPACK_IMPORTED_MODULE_3__["default"])({
+          arr: gameProgress,
+          type: 'percent',
+          direction: isForward.percent
+        });
+      }
+
+      Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["set"])('gameProgress', gameProgress);
+      _router_utils__WEBPACK_IMPORTED_MODULE_2__["routerUtils"].set('statistics');
+    }
+
+    if (type.match(/mouseup/)) {
+      Object(_animationBtn_utils__WEBPACK_IMPORTED_MODULE_0__["removeAnimationBtn"])(target);
+    }
+  }
+}
+
+/***/ }),
+
 /***/ "./app/utils/statistics/statisticsReset.utils.js":
 /*!*******************************************************!*\
   !*** ./app/utils/statistics/statisticsReset.utils.js ***!
@@ -2035,18 +2251,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return statisticsResetUtils; });
 /* harmony import */ var _storage_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../storage.utils */ "./app/utils/storage.utils.js");
 /* harmony import */ var _router_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../router.utils */ "./app/utils/router.utils.js");
+/* harmony import */ var _animationBtn_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./animationBtn.utils */ "./app/utils/statistics/animationBtn.utils.js");
 
 
-function statisticsResetUtils() {
-  var gameProgress = Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameProgress');
-  gameProgress.forEach(function (item) {
-    item.guess = 0;
-    item.mistake = 0;
-    item.click = 0;
-    item.percent = 0;
-  });
-  Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('gameProgress', gameProgress);
-  _router_utils__WEBPACK_IMPORTED_MODULE_1__["routerUtils"].set('statistics');
+
+function statisticsResetUtils(target, type) {
+  if (target.classList.value.match(/statistics__btn--reset/)) {
+    if (type.match(/mousedown/)) {
+      Object(_animationBtn_utils__WEBPACK_IMPORTED_MODULE_2__["addAnimationBtn"])(target);
+      var gameProgress = Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameProgress');
+      gameProgress.forEach(function (item) {
+        item.guess = 0;
+        item.mistake = 0;
+        item.click = 0;
+        item.percent = 0;
+      });
+      Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('gameProgress', gameProgress);
+      _router_utils__WEBPACK_IMPORTED_MODULE_1__["routerUtils"].set('statistics');
+    }
+
+    if (type.match(/mouseup/)) {
+      Object(_animationBtn_utils__WEBPACK_IMPORTED_MODULE_2__["removeAnimationBtn"])(target);
+    }
+  }
 }
 
 /***/ }),

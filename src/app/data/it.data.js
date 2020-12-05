@@ -31,8 +31,8 @@ export const itData = [
   },
   {
     category: 'tehnology',
-    title: 'сomputer',
-    cardName: 'сomputer',
+    title: 'computer',
+    cardName: 'computer',
     translate: 'компьютер',
     guess: 0,
     mistake: 0,
