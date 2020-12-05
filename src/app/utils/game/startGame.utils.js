@@ -7,7 +7,7 @@ export default function startGameUtils({ gameBtn, target, type }) {
     if (get('startGame') === 'off') {
       set('startGame', 'on');
       gameBtn.innerText = 'Repeat';
-      gameLogicUtils();
+      gameLogicUtils(target);
     }
   }
  

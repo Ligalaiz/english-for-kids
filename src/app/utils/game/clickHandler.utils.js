@@ -18,7 +18,7 @@ export default function clickHandlerUtils({ cards, count, songArray }) {
 
     if (!target.closest('.card')) return;
 
-    if (target.closest('.card').dataset.sound === songArray[count]) {
+    if (target.closest('.card').dataset.sound === songArray[count]['sound']) {
       createElementUtils(
         'div',
         'stars__item stars__item--true',
@@ -27,7 +27,7 @@ export default function clickHandlerUtils({ cards, count, songArray }) {
       );
       target.closest('.card').classList.add('card--disabled');
 
-      addResultUtils({target, type: 'guess'});
+      addResultUtils({ target, type: 'guess' });
 
       cardsSoundUtils({ sound: 'bell', path: 'app' });
       this.removeEventListener('click', listener);
@@ -40,14 +40,19 @@ export default function clickHandlerUtils({ cards, count, songArray }) {
         starsField
       );
       set('mistake', `${Number(get('mistake')) + 1}`);
-      addResultUtils({current:songArray[count], type: 'mistake'});
+      addResultUtils({ current: songArray[count]['sound'], type: 'mistake' });
     }
     songArray.pop();
     set('gameArray', songArray);
     count--;
     if (count >= 0) {
+      const getPage =
+        get('page') === 'statistics'
+          ? get('gameArray')[get('gameArray').length - 1]['category']
+          : get('page');
       setTimeout(
-        () => cardsSoundUtils({ path: get('page'), sound: songArray[count] }),
+        () =>
+          cardsSoundUtils({ path: getPage, sound: songArray[count]['sound'] }),
         1000
       );
     }

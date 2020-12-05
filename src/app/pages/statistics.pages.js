@@ -43,7 +43,7 @@ function createstatisticsPage() {
   `;
 
   let cardTemplate = `
-  <tr class="{{class}}__row  {{class}}__row--{{cardName}}">
+  <tr class="{{class}}__row  {{class}}__row--{{cardName}}  {{color}}">
     <td class="{{class}}__item  item__categories">{{category}}</td>
     <td class="{{class}}__item  item__words">{{title}}</td>
     <td class="{{class}}__item  item__translation">{{translate}}</td>
@@ -54,18 +54,32 @@ function createstatisticsPage() {
   </tr>`;
 
   let cardTemplateExport = '';
-
+  let color = '';
   statisticsData.forEach((el) => {
+    if (el['percent'] > 75) {
+      color = '{{class}}__row--green';
+    } else if (el['percent'] > 35) {
+      color = '{{class}}__row--yellow';
+    } else if (
+      el['percent'] > 1 ||
+      (el['percent'] === 0 && el['mistake'] > 0)
+    ) {
+      color = '{{class}}__row--red';
+    } else {
+      color = '';
+    }
+
     cardTemplateExport += cardTemplate
-      .replace(/\{{(class)}}/g, 'statistics')
+      .replace(/\{{(translate)}}/g, el['translate'])
       .replace(/\{{(cardName)}}/g, el['cardName'])
       .replace(/\{{(category)}}/g, el['category'])
-      .replace(/\{{(title)}}/g, el['title'])
-      .replace(/\{{(translate)}}/g, el['translate'])
-      .replace(/\{{(click)}}/g, el['click'])
-      .replace(/\{{(guess)}}/g, el['guess'])
       .replace(/\{{(mistake)}}/g, el['mistake'])
-      .replace(/\{{(percent)}}/g, el['percent']);
+      .replace(/\{{(percent)}}/g, el['percent'])
+      .replace(/\{{(title)}}/g, el['title'])
+      .replace(/\{{(click)}}/g, el['click'])
+      .replace(/\{{(guess)}}/g, el['guess'])    
+      .replace(/\{{(color)}}/g, color)
+      .replace(/\{{(class)}}/g, 'statistics');
   });
 
   let contentRowExport = contentRow

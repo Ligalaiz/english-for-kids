@@ -9,7 +9,7 @@ export const categoryData = [
   },
   {
     title: 'Tehnology',
-    cardName: 'it',
+    cardName: 'tehnology',
   },
   {
     title: 'Weather',

@@ -1,4 +1,4 @@
-@import './dataLayout/it';
+@import './dataLayout/tehnology';
 @import './dataLayout/cars';
 @import './dataLayout/city';
 @import './dataLayout/home';
@@ -270,7 +270,7 @@
 
     transition: all 0.2s linear;
     &:hover {
-      background-color: $brand-color--light;
+      background-color: $blue-color--light;
     }
   }
 
@@ -373,6 +373,16 @@
 }
 .header__trained {
   background-image: url('../assets/image/icon/train.svg');
+}
+
+.statistics__row--green {
+  background-color: $brand-color--light;
+}
+.statistics__row--yellow {
+background-color: $gold-color--light;
+}
+.statistics__row--red {
+background-color: $red-color--light;
 }
 
 @media (max-width: 1465px) {

@@ -33,40 +33,40 @@ export default function sortStatisticDataUtils(target, type) {
         changeFlage(isForward, 'category');
       }
       if (target.classList.value.match(/header__words/)) {
-        changeFlage(isForward, 'title');
         sort({ arr: gameProgress, type: 'title', direction: isForward.title });
+        changeFlage(isForward, 'title');
       }
       if (target.classList.value.match(/header__translation/)) {
-        changeFlage(isForward, 'translate');
         sort({
           arr: gameProgress,
           type: 'translate',
           direction: isForward.translate,
         });
+        changeFlage(isForward, 'translate');
       }
       if (target.classList.value.match(/header__trained/)) {
-        changeFlage(isForward, 'click');
         sort({ arr: gameProgress, type: 'click', direction: isForward.click });
+        changeFlage(isForward, 'click');
       }
       if (target.classList.value.match(/header__correct/)) {
-        changeFlage(isForward, 'guess');
         sort({ arr: gameProgress, type: 'guess', direction: isForward.guess });
+        changeFlage(isForward, 'guess');
       }
       if (target.classList.value.match(/header__incorrect/)) {
-        changeFlage(isForward, 'mistake');
         sort({
           arr: gameProgress,
           type: 'mistake',
           direction: isForward.mistake,
         });
+        changeFlage(isForward, 'mistake');
       }
       if (target.classList.value.match(/header__percent/)) {
-        changeFlage(isForward, 'percent');
         sort({
           arr: gameProgress,
           type: 'percent',
           direction: isForward.percent,
         });
+        changeFlage(isForward, 'percent');
       }
 
       set('gameProgress', gameProgress);

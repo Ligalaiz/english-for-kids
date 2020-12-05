@@ -1,4 +1,4 @@
-export const itData = [
+export const tehnologyData = [
   {
     category: 'tehnology',
     title: 'processor',

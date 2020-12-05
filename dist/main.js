@@ -372,7 +372,7 @@ var categoryData = [{
   cardName: 'home'
 }, {
   title: 'Tehnology',
-  cardName: 'it'
+  cardName: 'tehnology'
 }, {
   title: 'Weather',
   cardName: 'weather'
@@ -654,7 +654,7 @@ var homeData = [{
 /*!********************************!*\
   !*** ./app/data/index.data.js ***!
   \********************************/
-/*! exports provided: cityData, homeData, itData, weatherData, sportData, healthData, animalData, carsData, categoryData */
+/*! exports provided: cityData, homeData, tehnologyData, weatherData, sportData, healthData, animalData, carsData, categoryData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -665,8 +665,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home.data */ "./app/data/home.data.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "homeData", function() { return _home_data__WEBPACK_IMPORTED_MODULE_1__["homeData"]; });
 
-/* harmony import */ var _it_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./it.data */ "./app/data/it.data.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "itData", function() { return _it_data__WEBPACK_IMPORTED_MODULE_2__["itData"]; });
+/* harmony import */ var _tehnology_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tehnology.data */ "./app/data/tehnology.data.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "tehnologyData", function() { return _tehnology_data__WEBPACK_IMPORTED_MODULE_2__["tehnologyData"]; });
 
 /* harmony import */ var _weather_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./weather.data */ "./app/data/weather.data.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "weatherData", function() { return _weather_data__WEBPACK_IMPORTED_MODULE_3__["weatherData"]; });
@@ -696,92 +696,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-/***/ }),
-
-/***/ "./app/data/it.data.js":
-/*!*****************************!*\
-  !*** ./app/data/it.data.js ***!
-  \*****************************/
-/*! exports provided: itData */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "itData", function() { return itData; });
-var itData = [{
-  category: 'tehnology',
-  title: 'processor',
-  cardName: 'tehnology',
-  translate: 'процессор',
-  guess: 0,
-  mistake: 0,
-  click: 0,
-  percent: 0
-}, {
-  category: 'tehnology',
-  title: 'collider',
-  cardName: 'collider',
-  translate: 'коллайдер',
-  guess: 0,
-  mistake: 0,
-  click: 0,
-  percent: 0
-}, {
-  category: 'tehnology',
-  title: 'lidar',
-  cardName: 'lidar',
-  translate: 'лидар',
-  guess: 0,
-  mistake: 0,
-  click: 0,
-  percent: 0
-}, {
-  category: 'tehnology',
-  title: 'computer',
-  cardName: 'computer',
-  translate: 'компьютер',
-  guess: 0,
-  mistake: 0,
-  click: 0,
-  percent: 0
-}, {
-  category: 'tehnology',
-  title: 'spacex',
-  cardName: 'spacex',
-  translate: 'космос',
-  guess: 0,
-  mistake: 0,
-  click: 0,
-  percent: 0
-}, {
-  category: 'tehnology',
-  title: 'starlink',
-  cardName: 'starlink',
-  translate: 'звездочка',
-  guess: 0,
-  mistake: 0,
-  click: 0,
-  percent: 0
-}, {
-  category: 'tehnology',
-  title: 'server',
-  cardName: 'server',
-  translate: 'сервер',
-  guess: 0,
-  mistake: 0,
-  click: 0,
-  percent: 0
-}, {
-  category: 'tehnology',
-  title: 'telescope',
-  cardName: 'telescope',
-  translate: 'телескоп',
-  guess: 0,
-  mistake: 0,
-  click: 0,
-  percent: 0
-}];
 
 /***/ }),
 
@@ -863,6 +777,92 @@ var sportData = [{
   title: 'fmx',
   cardName: 'fmx',
   translate: 'фмх',
+  guess: 0,
+  mistake: 0,
+  click: 0,
+  percent: 0
+}];
+
+/***/ }),
+
+/***/ "./app/data/tehnology.data.js":
+/*!************************************!*\
+  !*** ./app/data/tehnology.data.js ***!
+  \************************************/
+/*! exports provided: tehnologyData */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tehnologyData", function() { return tehnologyData; });
+var tehnologyData = [{
+  category: 'tehnology',
+  title: 'processor',
+  cardName: 'tehnology',
+  translate: 'процессор',
+  guess: 0,
+  mistake: 0,
+  click: 0,
+  percent: 0
+}, {
+  category: 'tehnology',
+  title: 'collider',
+  cardName: 'collider',
+  translate: 'коллайдер',
+  guess: 0,
+  mistake: 0,
+  click: 0,
+  percent: 0
+}, {
+  category: 'tehnology',
+  title: 'lidar',
+  cardName: 'lidar',
+  translate: 'лидар',
+  guess: 0,
+  mistake: 0,
+  click: 0,
+  percent: 0
+}, {
+  category: 'tehnology',
+  title: 'computer',
+  cardName: 'computer',
+  translate: 'компьютер',
+  guess: 0,
+  mistake: 0,
+  click: 0,
+  percent: 0
+}, {
+  category: 'tehnology',
+  title: 'spacex',
+  cardName: 'spacex',
+  translate: 'космос',
+  guess: 0,
+  mistake: 0,
+  click: 0,
+  percent: 0
+}, {
+  category: 'tehnology',
+  title: 'starlink',
+  cardName: 'starlink',
+  translate: 'звездочка',
+  guess: 0,
+  mistake: 0,
+  click: 0,
+  percent: 0
+}, {
+  category: 'tehnology',
+  title: 'server',
+  cardName: 'server',
+  translate: 'сервер',
+  guess: 0,
+  mistake: 0,
+  click: 0,
+  percent: 0
+}, {
+  category: 'tehnology',
+  title: 'telescope',
+  cardName: 'telescope',
+  translate: 'телескоп',
   guess: 0,
   mistake: 0,
   click: 0,
@@ -1056,10 +1056,21 @@ function createstatisticsPage() {
 
   var statisticsData = Object(_utils_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameProgress');
   var contentRow = "\n  <div class=\"main__page  page page--{{class}} {{class}}\">\n    <div class=\"{{class}}__btn-wrap\">\n      <a class=\"{{class}}__btn {{class}}__btn--repeat\" data-{{class}}=\"repeat\">Repeat difficult words</a>\n      <button class=\"{{class}}__btn {{class}}__btn--reset\" data-{{class}}=\"reset\">Reset</button>\n    </div>\n    <div class=\"{{class}}__table-wrap\">\n      <table class=\"{{class}}__table\">\n        <thead >\n          <tr class=\"{{class}}__header\">\n          <th class=\"header__item header__categories\" title=\"categories\">Categories</th>\n          <th class=\"header__item header__words\" title=\"words\">Words</th>\n          <th class=\"header__item header__translation\" title=\"translation\">Translation</th>\n          <th class=\"header__item header__trained\" title=\"trained\"></th>\n          <th class=\"header__item header__correct\" title=\"correct\"></th>\n          <th class=\"header__item header__incorrect\" title=\"incorrect\"></th>\n          <th class=\"header__item header__percent\" title=\"percent\">%</th>\n          </tr>\n        </thead>\n        <tbody>\n          {{words}}\n        </tbody>\n      </table>\n    </div>\n  </div>\n  ";
-  var cardTemplate = "\n  <tr class=\"{{class}}__row  {{class}}__row--{{cardName}}\">\n    <td class=\"{{class}}__item  item__categories\">{{category}}</td>\n    <td class=\"{{class}}__item  item__words\">{{title}}</td>\n    <td class=\"{{class}}__item  item__translation\">{{translate}}</td>\n    <td class=\"{{class}}__item  item__trained\">{{click}}</td>\n    <td class=\"{{class}}__item  item__correct\">{{guess}}</td>\n    <td class=\"{{class}}__item  item__incorrect\">{{mistake}}</td>\n    <td class=\"{{class}}__item  item__percent\">{{percent}}</td>\n  </tr>";
+  var cardTemplate = "\n  <tr class=\"{{class}}__row  {{class}}__row--{{cardName}}  {{color}}\">\n    <td class=\"{{class}}__item  item__categories\">{{category}}</td>\n    <td class=\"{{class}}__item  item__words\">{{title}}</td>\n    <td class=\"{{class}}__item  item__translation\">{{translate}}</td>\n    <td class=\"{{class}}__item  item__trained\">{{click}}</td>\n    <td class=\"{{class}}__item  item__correct\">{{guess}}</td>\n    <td class=\"{{class}}__item  item__incorrect\">{{mistake}}</td>\n    <td class=\"{{class}}__item  item__percent\">{{percent}}</td>\n  </tr>";
   var cardTemplateExport = '';
+  var color = '';
   statisticsData.forEach(function (el) {
-    cardTemplateExport += cardTemplate.replace(/\{{(class)}}/g, 'statistics').replace(/\{{(cardName)}}/g, el['cardName']).replace(/\{{(category)}}/g, el['category']).replace(/\{{(title)}}/g, el['title']).replace(/\{{(translate)}}/g, el['translate']).replace(/\{{(click)}}/g, el['click']).replace(/\{{(guess)}}/g, el['guess']).replace(/\{{(mistake)}}/g, el['mistake']).replace(/\{{(percent)}}/g, el['percent']);
+    if (el['percent'] > 75) {
+      color = '{{class}}__row--green';
+    } else if (el['percent'] > 35) {
+      color = '{{class}}__row--yellow';
+    } else if (el['percent'] > 1 || el['percent'] === 0 && el['mistake'] > 0) {
+      color = '{{class}}__row--red';
+    } else {
+      color = '';
+    }
+
+    cardTemplateExport += cardTemplate.replace(/\{{(translate)}}/g, el['translate']).replace(/\{{(cardName)}}/g, el['cardName']).replace(/\{{(category)}}/g, el['category']).replace(/\{{(mistake)}}/g, el['mistake']).replace(/\{{(percent)}}/g, el['percent']).replace(/\{{(title)}}/g, el['title']).replace(/\{{(click)}}/g, el['click']).replace(/\{{(guess)}}/g, el['guess']).replace(/\{{(color)}}/g, color).replace(/\{{(class)}}/g, 'statistics');
   });
   var contentRowExport = contentRow.replace(/\{{(class)}}/g, 'statistics').replace(/\{{(words)}}/g, cardTemplateExport);
   return contentRowExport;
@@ -1093,6 +1104,9 @@ function addCards(_ref) {
       page = _ref.page;
   var tempData;
   var value = page ? page : target.dataset.route || target.dataset.card;
+  var tempArray = Object(_storage_utils__WEBPACK_IMPORTED_MODULE_2__["get"])('gameProgress').filter(function (item) {
+    return item['percent'] > 0 && item['percent'] <= 35 || item['percent'] === 0 && item['mistake'] > 0;
+  }).slice(0, 8); // set('diffWords', tempArray);
 
   switch (value) {
     case 'city':
@@ -1103,8 +1117,8 @@ function addCards(_ref) {
       tempData = _data_index_data__WEBPACK_IMPORTED_MODULE_0__["homeData"];
       break;
 
-    case 'it':
-      tempData = _data_index_data__WEBPACK_IMPORTED_MODULE_0__["itData"];
+    case 'tehnology':
+      tempData = _data_index_data__WEBPACK_IMPORTED_MODULE_0__["tehnologyData"];
       break;
 
     case 'weather':
@@ -1126,6 +1140,9 @@ function addCards(_ref) {
     case 'cars':
       tempData = _data_index_data__WEBPACK_IMPORTED_MODULE_0__["carsData"];
       break;
+
+    case 'repeat':
+      tempData = tempArray;
   }
 
   Object(_cardsShuffle_utils__WEBPACK_IMPORTED_MODULE_1__["default"])(tempData);
@@ -1133,7 +1150,7 @@ function addCards(_ref) {
   var cardTemplate = "\n    <div class=\"page__card  card  card--{{class}}  card--{{cardName}}\" data-sound=\"{{cardName}}\" data-category=\"{{class}}\" data-name=\"{{cardName}}\">\n      <div class=\"card__content  card__content--{{class}}  card__content--{{cardName}}\">\n        <button class=\"card__btn\" data-btn=\"btn\"></button>\n        <p class=\"card__title  card__title--{{class}}   card__title--{{cardName}}\">{{title}}</p>\n      </div>\n    </div>";
   var cardTemplateExport = '';
   tempData.forEach(function (el) {
-    cardTemplateExport += cardTemplate.replace(/\{{(title)}}/g, el['title']).replace(/\{{(cardName)}}/g, el['cardName']);
+    cardTemplateExport += cardTemplate.replace(/\{{(cardName)}}/g, el['cardName']).replace(/\{{(class)}}/g, el['category']).replace(/\{{(title)}}/g, el['title']);
   });
   var contentRowExport = contentRow.replace(/\{{(cards)}}/g, cardTemplateExport).replace(/\{{(class)}}/g, value);
   document.body.querySelector('.main').innerHTML = contentRowExport;
@@ -1668,7 +1685,7 @@ function clickHandlerUtils(_ref) {
     var target = e.target;
     if (!target.closest('.card')) return;
 
-    if (target.closest('.card').dataset.sound === songArray[count]) {
+    if (target.closest('.card').dataset.sound === songArray[count]['sound']) {
       Object(_createElement_utils__WEBPACK_IMPORTED_MODULE_2__["default"])('div', 'stars__item stars__item--true', null, starsField);
       target.closest('.card').classList.add('card--disabled');
       Object(_statistics_addResult_utils__WEBPACK_IMPORTED_MODULE_8__["default"])({
@@ -1688,7 +1705,7 @@ function clickHandlerUtils(_ref) {
       Object(_createElement_utils__WEBPACK_IMPORTED_MODULE_2__["default"])('div', 'stars__item stars__item--false', null, starsField);
       Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["set"])('mistake', "".concat(Number(Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["get"])('mistake')) + 1));
       Object(_statistics_addResult_utils__WEBPACK_IMPORTED_MODULE_8__["default"])({
-        current: songArray[count],
+        current: songArray[count]['sound'],
         type: 'mistake'
       });
     }
@@ -1698,10 +1715,11 @@ function clickHandlerUtils(_ref) {
     count--;
 
     if (count >= 0) {
+      var getPage = Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["get"])('page') === 'statistics' ? Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["get"])('gameArray')[Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["get"])('gameArray').length - 1]['category'] : Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["get"])('page');
       setTimeout(function () {
         return Object(_cardsSound_utils__WEBPACK_IMPORTED_MODULE_0__["default"])({
-          path: Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["get"])('page'),
-          sound: songArray[count]
+          path: getPage,
+          sound: songArray[count]['sound']
         });
       }, 1000);
     }
@@ -1785,16 +1803,20 @@ function toDo() {
   var cards = document.querySelectorAll('.card');
 
   var songArray = _toConsumableArray(cards).map(function (item) {
-    return item.dataset.sound;
+    return {
+      sound: item.dataset.sound,
+      category: item.dataset.category
+    };
   }).sort(function () {
     return Math.random() - 0.5;
   });
 
   Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('gameArray', songArray);
   var count = cards.length - 1;
+  var getPage = Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('page') === 'statistics' ? Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameArray')[Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameArray').length - 1]['category'] : Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('page');
   Object(_cardsSound_utils__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    path: Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('page'),
-    sound: songArray[count]
+    path: getPage,
+    sound: songArray[count]['sound']
   });
   Object(_clickHandler_utils__WEBPACK_IMPORTED_MODULE_2__["default"])({
     cards: cards,
@@ -1826,9 +1848,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function repeatWordUtils() {
+  var getPage = Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('page') === 'statistics' ? Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameArray')[Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameArray').length - 1]['category'] : Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('page');
   Object(_cardsSound_utils__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    sound: Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameArray')[Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameArray').length - 1],
-    path: Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('page')
+    sound: Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameArray')[Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameArray').length - 1]['sound'],
+    path: getPage
   });
 }
 
@@ -1900,7 +1923,7 @@ function startGameUtils(_ref) {
     if (Object(_storage_utils__WEBPACK_IMPORTED_MODULE_2__["get"])('startGame') === 'off') {
       Object(_storage_utils__WEBPACK_IMPORTED_MODULE_2__["set"])('startGame', 'on');
       gameBtn.innerText = 'Repeat';
-      Object(_gameLogic_utils__WEBPACK_IMPORTED_MODULE_0__["default"])();
+      Object(_gameLogic_utils__WEBPACK_IMPORTED_MODULE_0__["default"])(target);
     }
   }
 
@@ -2059,16 +2082,21 @@ function removeAnimationBtn(target) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return repeatDifficultWordsUtils; });
-/* harmony import */ var _animationBtn_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animationBtn.utils */ "./app/utils/statistics/animationBtn.utils.js");
+/* harmony import */ var _cardsRender_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../cardsRender.utils */ "./app/utils/cardsRender.utils.js");
+/* harmony import */ var _animationBtn_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./animationBtn.utils */ "./app/utils/statistics/animationBtn.utils.js");
+
 
 function repeatDifficultWordsUtils(target, type) {
   if (target.classList.value.match(/statistics__btn--repeat/)) {
     if (type.match(/mousedown/)) {
-      Object(_animationBtn_utils__WEBPACK_IMPORTED_MODULE_0__["addAnimationBtn"])(target);
+      Object(_animationBtn_utils__WEBPACK_IMPORTED_MODULE_1__["addAnimationBtn"])(target);
+      Object(_cardsRender_utils__WEBPACK_IMPORTED_MODULE_0__["default"])({
+        page: 'repeat'
+      });
     }
 
     if (type.match(/mouseup/)) {
-      Object(_animationBtn_utils__WEBPACK_IMPORTED_MODULE_0__["removeAnimationBtn"])(target);
+      Object(_animationBtn_utils__WEBPACK_IMPORTED_MODULE_1__["removeAnimationBtn"])(target);
     }
   }
 }
@@ -2174,57 +2202,57 @@ function sortStatisticDataUtils(target, type) {
       }
 
       if (target.classList.value.match(/header__words/)) {
-        changeFlage(isForward, 'title');
         Object(_sort_utils__WEBPACK_IMPORTED_MODULE_3__["default"])({
           arr: gameProgress,
           type: 'title',
           direction: isForward.title
         });
+        changeFlage(isForward, 'title');
       }
 
       if (target.classList.value.match(/header__translation/)) {
-        changeFlage(isForward, 'translate');
         Object(_sort_utils__WEBPACK_IMPORTED_MODULE_3__["default"])({
           arr: gameProgress,
           type: 'translate',
           direction: isForward.translate
         });
+        changeFlage(isForward, 'translate');
       }
 
       if (target.classList.value.match(/header__trained/)) {
-        changeFlage(isForward, 'click');
         Object(_sort_utils__WEBPACK_IMPORTED_MODULE_3__["default"])({
           arr: gameProgress,
           type: 'click',
           direction: isForward.click
         });
+        changeFlage(isForward, 'click');
       }
 
       if (target.classList.value.match(/header__correct/)) {
-        changeFlage(isForward, 'guess');
         Object(_sort_utils__WEBPACK_IMPORTED_MODULE_3__["default"])({
           arr: gameProgress,
           type: 'guess',
           direction: isForward.guess
         });
+        changeFlage(isForward, 'guess');
       }
 
       if (target.classList.value.match(/header__incorrect/)) {
-        changeFlage(isForward, 'mistake');
         Object(_sort_utils__WEBPACK_IMPORTED_MODULE_3__["default"])({
           arr: gameProgress,
           type: 'mistake',
           direction: isForward.mistake
         });
+        changeFlage(isForward, 'mistake');
       }
 
       if (target.classList.value.match(/header__percent/)) {
-        changeFlage(isForward, 'percent');
         Object(_sort_utils__WEBPACK_IMPORTED_MODULE_3__["default"])({
           arr: gameProgress,
           type: 'percent',
           direction: isForward.percent
         });
+        changeFlage(isForward, 'percent');
       }
 
       Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["set"])('gameProgress', gameProgress);

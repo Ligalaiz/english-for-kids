@@ -1,6 +1,6 @@
 import { cityData } from './city.data';
 import { homeData } from './home.data';
-import { itData } from './it.data';
+import { tehnologyData } from './tehnology.data';
 import { weatherData } from './weather.data';
 import { sportData } from './sport.data';
 import { healthData } from './health.data';
@@ -11,7 +11,7 @@ import { categoryData } from './category.data';
 export {
   cityData,
   homeData,
-  itData,
+  tehnologyData,
   weatherData,
   sportData,
   healthData,

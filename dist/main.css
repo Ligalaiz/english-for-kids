@@ -191,196 +191,196 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%; }
 
-.page--it .card--tehnology {
+.card--tehnology {
   background-image: url(2ffd3e4ba444ec577252ef70f544ec5f.webp); }
 
-.page--it .card--collider {
+.card--collider {
   background-image: url(e81b4c5276da1ea3b18370e969b31e00.webp); }
 
-.page--it .card--lidar {
+.card--lidar {
   background-image: url(2cd3ceb9d89ee225f0fd18bb25bda171.webp); }
 
-.page--it .card--computer {
+.card--computer {
   background-image: url(2807056544fa7b9df937bcf13063b528.webp); }
 
-.page--it .card--spacex {
+.card--spacex {
   background-image: url(fbc9056ef40149bbdbc03ae6de3f9c4f.webp); }
 
-.page--it .card--starlink {
+.card--starlink {
   background-image: url(3407876a246454185dafb3d28ad3427b.webp); }
 
-.page--it .card--server {
+.card--server {
   background-image: url(be5f0a978eea7fad9cf01f54cbca3e4d.webp); }
 
-.page--it .card--telescope {
+.card--telescope {
   background-image: url(07541e11b2e3078a6ac1259770053bde.webp); }
 
-.page--cars .card--cadillac {
+.card--cadillac {
   background-image: url(020a6783363d28da9dabc2d65d19a509.webp); }
 
-.page--cars .card--buick {
+.card--buick {
   background-image: url(a6de3a00c0056715d2be740b3636f075.webp); }
 
-.page--cars .card--chevy {
+.card--chevy {
   background-image: url(0c5d4576bd4826cf8ad0da9b3b816416.webp); }
 
-.page--cars .card--dodge {
+.card--dodge {
   background-image: url(c01e1da8547b2bc4f95b2407e68f745a.webp); }
 
-.page--cars .card--ford {
+.card--ford {
   background-image: url(ed204dc34467388f095e57daf9721db5.webp); }
 
-.page--cars .card--freightliner {
+.card--freightliner {
   background-image: url(c685e866a5279d9784efc154e3729ee5.webp); }
 
-.page--cars .card--l-atv {
+.card--l-atv {
   background-image: url(61cca50899bfd1b832674de68288cff8.webp); }
 
-.page--cars .card--tesla {
+.card--tesla {
   background-image: url(dc646697ab371517e97f99476deeddfc.webp); }
 
-.page--city .card--brussels {
+.card--brussels {
   background-image: url(18a78bb70ac22de0c36d3cd2261fa040.webp); }
 
-.page--city .card--losAngeles {
+.card--losAngeles {
   background-image: url(1ca45a1179c423e554b660b2bbe5d70a.webp); }
 
-.page--city .card--london {
+.card--london {
   background-image: url(b060f7fb348eff3ec69a5fb4b2ae9800.webp); }
 
-.page--city .card--minsk {
+.card--minsk {
   background-image: url(64f98247f8fbede32d279ed317ba4c32.webp); }
 
-.page--city .card--madrid {
+.card--madrid {
   background-image: url(78eceb631f28a985381dfcc8800839d2.webp); }
 
-.page--city .card--newYork {
+.card--newYork {
   background-image: url(3b7bac57744fb0f416125af1ca6fee9b.webp); }
 
-.page--city .card--paris {
+.card--paris {
   background-image: url(1d4fd19e3cef705b17d86ad419157b44.webp); }
 
-.page--city .card--singapore {
+.card--singapore {
   background-image: url(6032d63418022a7420784b84b04d2456.webp); }
 
-.page--home .card--livingRoom {
+.card--livingRoom {
   background-image: url(0ee1603d0fde0bcf8da1b86e03da00a2.webp); }
 
-.page--home .card--house {
+.card--house {
   background-image: url(c83e65636d5e8bdcf4c6ccf0fdc72da9.webp); }
 
-.page--home .card--backyard {
+.card--backyard {
   background-image: url(f592ad6c641ef8ee6960c3b475eebc50.webp); }
 
-.page--home .card--pool {
+.card--pool {
   background-image: url(9c50aea766d97e93a055fb7e2376f744.webp); }
 
-.page--home .card--kitchen {
+.card--kitchen {
   background-image: url(d6d48bbea559d4311fb0ce909972c775.webp); }
 
-.page--home .card--hall {
+.card--hall {
   background-image: url(b33748cf3cf6ab3cac92fd5eb4b8d54c.webp); }
 
-.page--home .card--fireplace {
+.card--fireplace {
   background-image: url(c1ebb298e72d8e96b9b022fa83d6db80.webp); }
 
-.page--home .card--bedroom {
+.card--bedroom {
   background-image: url(df302665bd8e759744020446e02a7c05.webp); }
 
-.page--sport .card--cycleRace {
+.card--cycleRace {
   background-image: url(278019d6850f425d0af75a87813918dd.webp); }
 
-.page--sport .card--run {
+.card--run {
   background-image: url(38bc39aa16735cb646b1d1afeb2ce881.webp); }
 
-.page--sport .card--skiing {
+.card--skiing {
   background-image: url(d2c721af7be5e0dcd2198b3585c9ef84.webp); }
 
-.page--sport .card--skydiving {
+.card--skydiving {
   background-image: url(77f4d594642b990658140d196cca53fe.webp); }
 
-.page--sport .card--swimming {
+.card--swimming {
   background-image: url(4c2cd844b2c5157b8d3ebbc9a1ccf680.webp); }
 
-.page--sport .card--box {
+.card--box {
   background-image: url(380dbcc374c9fe8faa49f3cdc8b7514d.webp); }
 
-.page--sport .card--mountaineering {
+.card--mountaineering {
   background-image: url(4f54a2ca27b35af8a21ef987c5f67e27.webp); }
 
-.page--sport .card--fmx {
+.card--fmx {
   background-image: url(c4e3c2142a0a5c9bc76414307cf036c8.webp); }
 
-.page--health .card--pressure {
+.card--pressure {
   background-image: url(c8658221b11e94d83ba5ee072c1aa37f.webp); }
 
-.page--health .card--fitness {
+.card--fitness {
   background-image: url(b708a78ae9c0ac1ba2f33d3068430725.webp); }
 
-.page--health .card--food {
+.card--food {
   background-image: url(b4060b85fa78e437059612498184ddcd.webp); }
 
-.page--health .card--vitamins {
+.card--vitamins {
   background-image: url(0e71de0e03fa687f4112141b2bd33716.webp); }
 
-.page--health .card--meditation {
+.card--meditation {
   background-image: url(3fd0e325cf679e2f7ac439525bb32b15.webp); }
 
-.page--health .card--water {
+.card--water {
   background-image: url(e188285641db731b6728744d49ddd16c.webp); }
 
-.page--health .card--happiness {
+.card--happiness {
   background-image: url(a65fd43c861fcfe97c7467c604ebdff7.webp); }
 
-.page--health .card--sleep {
+.card--sleep {
   background-image: url(373eb9b074c115407224f9f634579787.webp); }
 
-.page--animal .card--animal {
+.card--animal {
   background-image: url(04eb25022503a15a677af01bfcbacc5e.webp); }
 
-.page--animal .card--bear {
+.card--bear {
   background-image: url(8d846d9dd030afbfa13c12b22ee221f6.webp); }
 
-.page--animal .card--cat {
+.card--cat {
   background-image: url(995acde77482026cfd71e2ba962a6686.webp); }
 
-.page--animal .card--eagle {
+.card--eagle {
   background-image: url(d8bb164122307cee8d55f7033540ab4a.webp); }
 
-.page--animal .card--human {
+.card--human {
   background-image: url(75818c4dd4381823231195461eee73ff.webp); }
 
-.page--animal .card--killerWhale {
+.card--killerWhale {
   background-image: url(ce6151cc23b40c267f18c1b2a02e590e.webp); }
 
-.page--animal .card--purgatorius {
+.card--purgatorius {
   background-image: url(6151a6565770e3822da262bfb6e69283.webp); }
 
-.page--animal .card--tiger {
+.card--tiger {
   background-image: url(26fba9a253f737c7bc94c40588d065ce.webp); }
 
-.page--weather .card--cloudy {
+.card--cloudy {
   background-image: url(c5d1df5b1def5c60d909eddf1bd54078.webp); }
 
-.page--weather .card--frosty {
+.card--frosty {
   background-image: url(4a0d3350d9c7090e914d3f9b6a6bf0c1.webp); }
 
-.page--weather .card--raining {
+.card--raining {
   background-image: url(f74d50bcc3013f809a5cd96cf3209995.webp); }
 
-.page--weather .card--snowing {
+.card--snowing {
   background-image: url(e25f1816139fc243a5369ac1617f5478.webp); }
 
-.page--weather .card--sunny {
+.card--sunny {
   background-image: url(2303c4b31a73bc1feb38db1cd3bbd797.webp); }
 
-.page--weather .card--tornados {
+.card--tornados {
   background-image: url(8afd9daaf0c3919cc259ac1555aa693a.webp); }
 
-.page--weather .card--tunderstorm {
+.card--tunderstorm {
   background-image: url(1ec8d4c008b532a59986eb4218199f38.webp); }
 
-.page--weather .card--windy {
+.card--windy {
   background-image: url(12b6b769cf8c022a85a302a9f464e28c.webp); }
 
 .page--category .card--city {
@@ -389,7 +389,7 @@ input:checked + .slider:before {
 .page--category .card--home {
   background-image: url(c83e65636d5e8bdcf4c6ccf0fdc72da9.webp); }
 
-.page--category .card--it {
+.page--category .card--tehnology {
   background-image: url(2ffd3e4ba444ec577252ef70f544ec5f.webp); }
 
 .page--category .card--weather {
@@ -603,7 +603,7 @@ input:checked + .slider:before {
   border-bottom: 1px solid #b7b1b117;
   transition: all 0.2s linear; }
   .statistics__row:hover {
-    background-color: #28c38a40; }
+    background-color: #a1dafabf; }
 
 .statistics__item {
   padding: 0 5px; }
@@ -681,6 +681,15 @@ input:checked + .slider:before {
 
 .header__trained {
   background-image: url(d71712f093465f0601bb9f69dacd61dd.svg); }
+
+.statistics__row--green {
+  background-color: #28c38a40; }
+
+.statistics__row--yellow {
+  background-color: #ffc90040; }
+
+.statistics__row--red {
+  background-color: #ef0c3687; }
 
 @media (max-width: 1465px) {
   .wrap {

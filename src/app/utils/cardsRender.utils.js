@@ -7,6 +7,16 @@ function addCards({ target, page }) {
 
   let value = page ? page : target.dataset.route || target.dataset.card;
 
+  let tempArray = get('gameProgress')
+    .filter(
+      (item) =>
+        (item['percent'] > 0 && item['percent'] <= 35) ||
+        (item['percent'] === 0 && item['mistake'] > 0)
+    )
+    .slice(0, 8);
+
+  // set('diffWords', tempArray);
+
   switch (value) {
     case 'city':
       tempData = indexData.cityData;
@@ -14,8 +24,8 @@ function addCards({ target, page }) {
     case 'home':
       tempData = indexData.homeData;
       break;
-    case 'it':
-      tempData = indexData.itData;
+    case 'tehnology':
+      tempData = indexData.tehnologyData;
       break;
     case 'weather':
       tempData = indexData.weatherData;
@@ -32,6 +42,8 @@ function addCards({ target, page }) {
     case 'cars':
       tempData = indexData.carsData;
       break;
+    case 'repeat':
+      tempData = tempArray;
   }
 
   cardsShuffleUtils(tempData);
@@ -61,8 +73,9 @@ function addCards({ target, page }) {
 
   tempData.forEach((el) => {
     cardTemplateExport += cardTemplate
-      .replace(/\{{(title)}}/g, el['title'])
-      .replace(/\{{(cardName)}}/g, el['cardName']);
+      .replace(/\{{(cardName)}}/g, el['cardName'])
+      .replace(/\{{(class)}}/g, el['category'])
+      .replace(/\{{(title)}}/g, el['title']);
   });
 
   let contentRowExport = contentRow
