@@ -4,6 +4,8 @@ import { routerUtils } from './router.utils';
 import cardsRenderUtils from './cardsRender.utils';
 import changeCardsStyleUtils from './changeCardsStyle.utils';
 import * as cardsData from '../data/index.data';
+import restoreCurrentProgressUtils from './restoreCurrentProgress.utils';
+import restoreCardsListenersUtils from './game/restoreCardsListeners.utils';
 
 export default function checkStateUtils() {
   if (!get('page')) {
@@ -15,6 +17,10 @@ export default function checkStateUtils() {
 
   if (!get('startGame')) {
     set('startGame', 'off');
+  }
+
+  if (!get('currentProgress')) {
+    set('currentProgress', []);
   }
 
   if (!get('repeat')) set('repeat', []);
@@ -43,12 +49,17 @@ export default function checkStateUtils() {
     }, 0);
 
     if (get('game') === 'on') {
+      const gameBtn = document.querySelector('.game__btn');
       changeCardsStyleUtils();
-      document.querySelector('.game__btn').classList.add('game__btn--active');
+      gameBtn.classList.add('game__btn--active');
       if (get('startGame') === 'on') {
-        document.querySelector('.game__btn').innerText = 'Repeat';
+        gameBtn.innerText = 'Repeat';
+        gameBtn.classList.add('game__btn--repeat', 'game__btn--active');
+
+        restoreCurrentProgressUtils();
+        restoreCardsListenersUtils();
       } else {
-        document.querySelector('.game__btn').innerText = 'Start';
+        gameBtn.innerText = 'Start';
       }
     }
   }

@@ -500,7 +500,8 @@ input:checked + .slider:before {
     outline: none;
     cursor: pointer;
     transform: translateY(-50%);
-    transition: all 0.2s linear; }
+    transition: all 0.2s linear;
+    z-index: 90; }
     .card__btn:hover {
       background-color: #0df2e726;
       box-shadow: 0 7px 15px rgba(0, 0, 0, 0.25), 0 4px 6px rgba(0, 0, 0, 0.22); }
@@ -582,6 +583,8 @@ input:checked + .slider:before {
     box-shadow: none; }
   .game__btn--active {
     visibility: visible; }
+  .game__btn--repeat {
+    background-color: #ffc900; }
 
 .statistics__table {
   min-width: 478px;

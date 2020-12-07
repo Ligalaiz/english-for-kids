@@ -1,12 +1,13 @@
 import cardsSoundUtils from '../cardsSound.utils';
 import { get, set } from '../storage.utils';
-import createElementUtils from '../createElement.utils';
 import clearStarsFieldUtils from './clearStarsField.utils';
 import changeCardsStyleUtils from '../changeCardsStyle.utils';
 import showGameMessageUtils from './showGameMessage.utils';
 import { pageTypeRoutes } from '../../app.routes';
 import { routerUtils } from '../router.utils';
 import addResultUtils from '../statistics/addResult.utils';
+import currentProgressUtils from './currentProgress.utils';
+import createStarsUtils from './createStars.utils';
 
 export default function clickHandlerUtils({ cards, count, songArray }) {
   const starsField = document.querySelector('.stars');
@@ -19,12 +20,12 @@ export default function clickHandlerUtils({ cards, count, songArray }) {
     if (!target.closest('.card')) return;
 
     if (target.closest('.card').dataset.sound === songArray[count]['sound']) {
-      createElementUtils(
-        'div',
-        'stars__item stars__item--true',
-        null,
-        starsField
-      );
+
+      const currentCardCategory = get('gameArray')[get('gameArray').length - 1]['sound'];
+      currentProgressUtils({card: currentCardCategory, state: 'true' });
+
+      createStarsUtils('true');
+
       target.closest('.card').classList.add('card--disabled');
 
       addResultUtils({ target, type: 'guess' });
@@ -32,13 +33,12 @@ export default function clickHandlerUtils({ cards, count, songArray }) {
       cardsSoundUtils({ sound: 'bell', path: 'app' });
       this.removeEventListener('click', listener);
     } else {
+      const currentCardCategory = get('gameArray')[get('gameArray').length - 1]['sound'];
+      currentProgressUtils({ card: currentCardCategory, state: 'false' });
+
       cardsSoundUtils({ sound: 'error', path: 'app' });
-      createElementUtils(
-        'div',
-        'stars__item stars__item--false',
-        null,
-        starsField
-      );
+      createStarsUtils('false');
+
       set('mistake', `${Number(get('mistake')) + 1}`);
       addResultUtils({ current: songArray[count]['sound'], type: 'mistake' });
     }
@@ -57,6 +57,7 @@ export default function clickHandlerUtils({ cards, count, songArray }) {
       );
     }
     if (count < 0) {
+      set('currentProgress', []);
       clearStarsFieldUtils(starsField);
       changeCardsStyleUtils();
       showGameMessageUtils();
@@ -65,7 +66,7 @@ export default function clickHandlerUtils({ cards, count, songArray }) {
       } else {
         cardsSoundUtils({ sound: 'success', path: 'app' });
       }
-      gameBtn.classList.remove('game__btn--active');
+      gameBtn.classList.remove('game__btn--repeat', 'game__btn--active');
 
       setTimeout(() => {
         set('game', 'off');

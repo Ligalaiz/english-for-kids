@@ -6,7 +6,7 @@ import sort from './sort.utils';
 function changeFlage(isForward, type) {
   isForward[type] = isForward[type] === 'forward' ? 'reverse' : 'forward';
 }
-//TODO: бросить  в константу
+
 let isForward = {
   category: 'forward',
   title: 'forward',

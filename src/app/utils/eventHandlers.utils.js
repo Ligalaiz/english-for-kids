@@ -30,9 +30,16 @@ function handler(e, routerUtils) {
     }
 
     cardsRenderUtils({ target, routerUtils });
-    if (target.dataset.sound && get('game') === 'off') {
-      cardsSoundUtils({ target });
-      addResultUtils({ target, type: 'click' });
+    
+    if (target.closest('.card') && get('game') === 'off') {
+      if (
+        !target.closest('.card').dataset || target.classList.value.match(/card__btn/)) {
+        return;
+      }
+      if (target.closest('.card').dataset.sound) {
+        cardsSoundUtils({ target: target.closest('.card') });
+        addResultUtils({ target: target.closest('.card'), type: 'click' });
+      }
     }
 
     setTimeout(() => {

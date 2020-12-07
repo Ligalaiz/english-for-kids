@@ -1330,6 +1330,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _cardsRender_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./cardsRender.utils */ "./app/utils/cardsRender.utils.js");
 /* harmony import */ var _changeCardsStyle_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./changeCardsStyle.utils */ "./app/utils/changeCardsStyle.utils.js");
 /* harmony import */ var _data_index_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../data/index.data */ "./app/data/index.data.js");
+/* harmony import */ var _restoreCurrentProgress_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./restoreCurrentProgress.utils */ "./app/utils/restoreCurrentProgress.utils.js");
+/* harmony import */ var _game_restoreCardsListeners_utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./game/restoreCardsListeners.utils */ "./app/utils/game/restoreCardsListeners.utils.js");
+
+
 
 
 
@@ -1346,6 +1350,10 @@ function checkStateUtils() {
 
   if (!Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('startGame')) {
     Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('startGame', 'off');
+  }
+
+  if (!Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('currentProgress')) {
+    Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('currentProgress', []);
   }
 
   if (!Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('repeat')) Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('repeat', []);
@@ -1377,13 +1385,17 @@ function checkStateUtils() {
     }, 0);
 
     if (Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('game') === 'on') {
+      var gameBtn = document.querySelector('.game__btn');
       Object(_changeCardsStyle_utils__WEBPACK_IMPORTED_MODULE_4__["default"])();
-      document.querySelector('.game__btn').classList.add('game__btn--active');
+      gameBtn.classList.add('game__btn--active');
 
       if (Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('startGame') === 'on') {
-        document.querySelector('.game__btn').innerText = 'Repeat';
+        gameBtn.innerText = 'Repeat';
+        gameBtn.classList.add('game__btn--repeat', 'game__btn--active');
+        Object(_restoreCurrentProgress_utils__WEBPACK_IMPORTED_MODULE_6__["default"])();
+        Object(_game_restoreCardsListeners_utils__WEBPACK_IMPORTED_MODULE_7__["default"])();
       } else {
-        document.querySelector('.game__btn').innerText = 'Start';
+        gameBtn.innerText = 'Start';
       }
     }
   }
@@ -1526,14 +1538,20 @@ function handler(e, routerUtils) {
       routerUtils: routerUtils
     });
 
-    if (target.dataset.sound && Object(_storage_utils__WEBPACK_IMPORTED_MODULE_4__["get"])('game') === 'off') {
-      Object(_cardsSound_utils__WEBPACK_IMPORTED_MODULE_0__["default"])({
-        target: target
-      });
-      Object(_statistics_addResult_utils__WEBPACK_IMPORTED_MODULE_6__["default"])({
-        target: target,
-        type: 'click'
-      });
+    if (target.closest('.card') && Object(_storage_utils__WEBPACK_IMPORTED_MODULE_4__["get"])('game') === 'off') {
+      if (!target.closest('.card').dataset || target.classList.value.match(/card__btn/)) {
+        return;
+      }
+
+      if (target.closest('.card').dataset.sound) {
+        Object(_cardsSound_utils__WEBPACK_IMPORTED_MODULE_0__["default"])({
+          target: target.closest('.card')
+        });
+        Object(_statistics_addResult_utils__WEBPACK_IMPORTED_MODULE_6__["default"])({
+          target: target.closest('.card'),
+          type: 'click'
+        });
+      }
     }
 
     setTimeout(function () {
@@ -1602,13 +1620,14 @@ function gameUtils(target, type) {
       if (Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('game') === 'on') {
         Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('game', 'off');
         Object(_changeCardsStyle_utils__WEBPACK_IMPORTED_MODULE_1__["default"])();
-        gameBtn.classList.remove('game__btn--active');
+        gameBtn.classList.remove('game__btn--repeat', 'game__btn--active');
         cards.forEach(function (item) {
           return item.classList.remove('card--disabled');
         });
         Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('startGame', 'off');
         Object(_game_clearStarsField_utils__WEBPACK_IMPORTED_MODULE_3__["default"])(starsField);
         Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('mistake', '0');
+        Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('currentProgress', []);
       } else if (Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('game') === 'off') {
         Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('game', 'on');
         Object(_changeCardsStyle_utils__WEBPACK_IMPORTED_MODULE_1__["default"])();
@@ -1623,6 +1642,38 @@ function gameUtils(target, type) {
     target: target,
     type: type
   });
+}
+
+/***/ }),
+
+/***/ "./app/utils/game/checkGuessCard.utils.js":
+/*!************************************************!*\
+  !*** ./app/utils/game/checkGuessCard.utils.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return checkGuessCardUtils; });
+function checkGuessCardUtils(arr, cards, value) {
+  var filterCards = null;
+
+  if (value === 'guess') {
+    filterCards = cards.filter(function (card) {
+      return arr.filter(function (item) {
+        return card.dataset.sound === item.card && item.state === 'true';
+      }).length !== 0;
+    });
+  } else {
+    filterCards = cards.filter(function (card) {
+      return arr.filter(function (item) {
+        return card.dataset.sound !== item.card || item.state === 'false';
+      }).length !== 0;
+    });
+  }
+
+  return filterCards;
 }
 
 /***/ }),
@@ -1657,13 +1708,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return clickHandlerUtils; });
 /* harmony import */ var _cardsSound_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../cardsSound.utils */ "./app/utils/cardsSound.utils.js");
 /* harmony import */ var _storage_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../storage.utils */ "./app/utils/storage.utils.js");
-/* harmony import */ var _createElement_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../createElement.utils */ "./app/utils/createElement.utils.js");
-/* harmony import */ var _clearStarsField_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./clearStarsField.utils */ "./app/utils/game/clearStarsField.utils.js");
-/* harmony import */ var _changeCardsStyle_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../changeCardsStyle.utils */ "./app/utils/changeCardsStyle.utils.js");
-/* harmony import */ var _showGameMessage_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./showGameMessage.utils */ "./app/utils/game/showGameMessage.utils.js");
-/* harmony import */ var _app_routes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../app.routes */ "./app/app.routes.js");
-/* harmony import */ var _router_utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../router.utils */ "./app/utils/router.utils.js");
-/* harmony import */ var _statistics_addResult_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../statistics/addResult.utils */ "./app/utils/statistics/addResult.utils.js");
+/* harmony import */ var _clearStarsField_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./clearStarsField.utils */ "./app/utils/game/clearStarsField.utils.js");
+/* harmony import */ var _changeCardsStyle_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../changeCardsStyle.utils */ "./app/utils/changeCardsStyle.utils.js");
+/* harmony import */ var _showGameMessage_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./showGameMessage.utils */ "./app/utils/game/showGameMessage.utils.js");
+/* harmony import */ var _app_routes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../app.routes */ "./app/app.routes.js");
+/* harmony import */ var _router_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../router.utils */ "./app/utils/router.utils.js");
+/* harmony import */ var _statistics_addResult_utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../statistics/addResult.utils */ "./app/utils/statistics/addResult.utils.js");
+/* harmony import */ var _currentProgress_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./currentProgress.utils */ "./app/utils/game/currentProgress.utils.js");
+/* harmony import */ var _createStars_utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./createStars.utils */ "./app/utils/game/createStars.utils.js");
+
 
 
 
@@ -1686,9 +1739,14 @@ function clickHandlerUtils(_ref) {
     if (!target.closest('.card')) return;
 
     if (target.closest('.card').dataset.sound === songArray[count]['sound']) {
-      Object(_createElement_utils__WEBPACK_IMPORTED_MODULE_2__["default"])('div', 'stars__item stars__item--true', null, starsField);
+      var currentCardCategory = Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["get"])('gameArray')[Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["get"])('gameArray').length - 1]['sound'];
+      Object(_currentProgress_utils__WEBPACK_IMPORTED_MODULE_8__["default"])({
+        card: currentCardCategory,
+        state: 'true'
+      });
+      Object(_createStars_utils__WEBPACK_IMPORTED_MODULE_9__["default"])('true');
       target.closest('.card').classList.add('card--disabled');
-      Object(_statistics_addResult_utils__WEBPACK_IMPORTED_MODULE_8__["default"])({
+      Object(_statistics_addResult_utils__WEBPACK_IMPORTED_MODULE_7__["default"])({
         target: target,
         type: 'guess'
       });
@@ -1698,13 +1756,18 @@ function clickHandlerUtils(_ref) {
       });
       this.removeEventListener('click', listener);
     } else {
+      var _currentCardCategory = Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["get"])('gameArray')[Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["get"])('gameArray').length - 1]['sound'];
+      Object(_currentProgress_utils__WEBPACK_IMPORTED_MODULE_8__["default"])({
+        card: _currentCardCategory,
+        state: 'false'
+      });
       Object(_cardsSound_utils__WEBPACK_IMPORTED_MODULE_0__["default"])({
         sound: 'error',
         path: 'app'
       });
-      Object(_createElement_utils__WEBPACK_IMPORTED_MODULE_2__["default"])('div', 'stars__item stars__item--false', null, starsField);
+      Object(_createStars_utils__WEBPACK_IMPORTED_MODULE_9__["default"])('false');
       Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["set"])('mistake', "".concat(Number(Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["get"])('mistake')) + 1));
-      Object(_statistics_addResult_utils__WEBPACK_IMPORTED_MODULE_8__["default"])({
+      Object(_statistics_addResult_utils__WEBPACK_IMPORTED_MODULE_7__["default"])({
         current: songArray[count]['sound'],
         type: 'mistake'
       });
@@ -1725,9 +1788,10 @@ function clickHandlerUtils(_ref) {
     }
 
     if (count < 0) {
-      Object(_clearStarsField_utils__WEBPACK_IMPORTED_MODULE_3__["default"])(starsField);
-      Object(_changeCardsStyle_utils__WEBPACK_IMPORTED_MODULE_4__["default"])();
-      Object(_showGameMessage_utils__WEBPACK_IMPORTED_MODULE_5__["default"])();
+      Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["set"])('currentProgress', []);
+      Object(_clearStarsField_utils__WEBPACK_IMPORTED_MODULE_2__["default"])(starsField);
+      Object(_changeCardsStyle_utils__WEBPACK_IMPORTED_MODULE_3__["default"])();
+      Object(_showGameMessage_utils__WEBPACK_IMPORTED_MODULE_4__["default"])();
 
       if (Number(Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["get"])('mistake')) > 0) {
         Object(_cardsSound_utils__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -1741,7 +1805,7 @@ function clickHandlerUtils(_ref) {
         });
       }
 
-      gameBtn.classList.remove('game__btn--active');
+      gameBtn.classList.remove('game__btn--repeat', 'game__btn--active');
       setTimeout(function () {
         Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["set"])('game', 'off');
 
@@ -1753,7 +1817,7 @@ function clickHandlerUtils(_ref) {
         return item.classList.remove('card--disabled');
       });
       Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["set"])('startGame', 'off');
-      _router_utils__WEBPACK_IMPORTED_MODULE_7__["routerUtils"].set(_app_routes__WEBPACK_IMPORTED_MODULE_6__["pageTypeRoutes"].defaultPageType);
+      _router_utils__WEBPACK_IMPORTED_MODULE_6__["routerUtils"].set(_app_routes__WEBPACK_IMPORTED_MODULE_5__["pageTypeRoutes"].defaultPageType);
     }
   }
 
@@ -1766,6 +1830,45 @@ function clickHandlerUtils(_ref) {
       }
     }, 1000);
   });
+}
+
+/***/ }),
+
+/***/ "./app/utils/game/createStars.utils.js":
+/*!*********************************************!*\
+  !*** ./app/utils/game/createStars.utils.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return createStarsUtils; });
+/* harmony import */ var _createElement_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createElement.utils */ "./app/utils/createElement.utils.js");
+
+function createStarsUtils(value) {
+  var starsField = document.querySelector('.stars');
+  Object(_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', "stars__item stars__item--".concat(value), null, starsField);
+}
+
+/***/ }),
+
+/***/ "./app/utils/game/currentProgress.utils.js":
+/*!*************************************************!*\
+  !*** ./app/utils/game/currentProgress.utils.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return currentProgressUtils; });
+/* harmony import */ var _storage_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../storage.utils */ "./app/utils/storage.utils.js");
+
+function currentProgressUtils(value) {
+  var currentProgressArr = Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('currentProgress');
+  currentProgressArr.push(value);
+  Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["set"])('currentProgress', currentProgressArr);
 }
 
 /***/ }),
@@ -1857,6 +1960,56 @@ function repeatWordUtils() {
 
 /***/ }),
 
+/***/ "./app/utils/game/restoreCardsListeners.utils.js":
+/*!*******************************************************!*\
+  !*** ./app/utils/game/restoreCardsListeners.utils.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return restoreCardsListenersUtils; });
+/* harmony import */ var _storage_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../storage.utils */ "./app/utils/storage.utils.js");
+/* harmony import */ var _checkGuessCard_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./checkGuessCard.utils */ "./app/utils/game/checkGuessCard.utils.js");
+/* harmony import */ var _clickHandler_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./clickHandler.utils */ "./app/utils/game/clickHandler.utils.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+
+
+function restoreCardsListenersUtils() {
+  var songArray = Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('gameArray');
+  var currentProgress = Object(_storage_utils__WEBPACK_IMPORTED_MODULE_0__["get"])('currentProgress');
+  var count = songArray.length - 1;
+
+  var cards = _toConsumableArray(document.querySelectorAll('.card'));
+
+  var disabledCards = Object(_checkGuessCard_utils__WEBPACK_IMPORTED_MODULE_1__["default"])(currentProgress, cards, 'guess');
+  disabledCards.forEach(function (item) {
+    return item.classList.add('card--disabled');
+  });
+  var filterCards = Object(_checkGuessCard_utils__WEBPACK_IMPORTED_MODULE_1__["default"])(currentProgress, cards, 'notGuess');
+  console.log(filterCards);
+  Object(_clickHandler_utils__WEBPACK_IMPORTED_MODULE_2__["default"])({
+    cards: filterCards,
+    count: count,
+    songArray: songArray
+  });
+}
+
+/***/ }),
+
 /***/ "./app/utils/game/showGameMessage.utils.js":
 /*!*************************************************!*\
   !*** ./app/utils/game/showGameMessage.utils.js ***!
@@ -1923,6 +2076,7 @@ function startGameUtils(_ref) {
     if (Object(_storage_utils__WEBPACK_IMPORTED_MODULE_2__["get"])('startGame') === 'off') {
       Object(_storage_utils__WEBPACK_IMPORTED_MODULE_2__["set"])('startGame', 'on');
       gameBtn.innerText = 'Repeat';
+      gameBtn.classList.add('game__btn--repeat');
       Object(_gameLogic_utils__WEBPACK_IMPORTED_MODULE_0__["default"])(target);
     }
   }
@@ -1995,6 +2149,38 @@ function homeBtnUtils(target, type) {
 }
 function menuSwitcherUtils() {
   nav.classList.contains('nav--active') ? menuCloseUtils() : menuOpenUtils();
+}
+
+/***/ }),
+
+/***/ "./app/utils/restoreCurrentProgress.utils.js":
+/*!***************************************************!*\
+  !*** ./app/utils/restoreCurrentProgress.utils.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return restoreCurrentProgressUtils; });
+/* harmony import */ var _game_createStars_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./game/createStars.utils */ "./app/utils/game/createStars.utils.js");
+/* harmony import */ var _storage_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./storage.utils */ "./app/utils/storage.utils.js");
+
+
+function restoreCurrentProgressUtils() {
+  var currentProgressArr = Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["get"])('currentProgress');
+  currentProgressArr.forEach(function (item) {
+    switch (item.state) {
+      case 'true':
+        Object(_game_createStars_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('true');
+        break;
+
+      case 'false':
+        Object(_game_createStars_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('false');
+        break;
+    }
+  });
+  Object(_storage_utils__WEBPACK_IMPORTED_MODULE_1__["set"])('currentProgress', currentProgressArr);
 }
 
 /***/ }),

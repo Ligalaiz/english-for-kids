@@ -135,6 +135,7 @@
     cursor: pointer;
     transform: translateY(-50%);
     transition: all 0.2s linear;
+    z-index: 90;
     &:hover {
       background-color: #0df2e726;
       box-shadow: 0 7px 15px rgba(0, 0, 0, 0.25), 0 4px 6px rgba(0, 0, 0, 0.22);
@@ -240,6 +241,9 @@
   }
   &--active {
     visibility: visible;
+  }
+  &--repeat {
+    background-color: $gold-color;
   }
 }
 
@@ -379,10 +383,10 @@
   background-color: $brand-color--light;
 }
 .statistics__row--yellow {
-background-color: $gold-color--light;
+  background-color: $gold-color--light;
 }
 .statistics__row--red {
-background-color: $red-color--light;
+  background-color: $red-color--light;
 }
 
 @media (max-width: 1465px) {

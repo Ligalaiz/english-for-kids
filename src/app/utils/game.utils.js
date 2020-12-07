@@ -14,11 +14,12 @@ export default function gameUtils(target, type) {
       if (get('game') === 'on') {
         set('game', 'off');
         changeCardsStyleUtils();
-        gameBtn.classList.remove('game__btn--active');
+        gameBtn.classList.remove('game__btn--repeat','game__btn--active');
         cards.forEach((item) => item.classList.remove('card--disabled'));
         set('startGame', 'off');
         clearStarsFieldUtils(starsField);
         set('mistake', '0');
+        set('currentProgress', []);
       } else if (get('game') === 'off') {
         set('game', 'on');
         changeCardsStyleUtils();

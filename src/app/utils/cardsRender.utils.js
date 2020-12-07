@@ -15,8 +15,6 @@ function addCards({ target, page }) {
     )
     .slice(0, 8);
 
-  // set('diffWords', tempArray);
-
   switch (value) {
     case 'city':
       tempData = indexData.cityData;
