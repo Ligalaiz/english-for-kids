@@ -8,8 +8,8 @@ export const categoryData = [
     cardName: 'home',
   },
   {
-    title: 'Tehnology',
-    cardName: 'tehnology',
+    title: 'Technology',
+    cardName: 'technology',
   },
   {
     title: 'Weather',

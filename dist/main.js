@@ -371,8 +371,8 @@ var categoryData = [{
   title: 'Home',
   cardName: 'home'
 }, {
-  title: 'Tehnology',
-  cardName: 'tehnology'
+  title: 'Technology',
+  cardName: 'technology'
 }, {
   title: 'Weather',
   cardName: 'weather'
