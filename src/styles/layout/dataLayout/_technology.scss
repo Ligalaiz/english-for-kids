@@ -1,0 +1,26 @@
+.card {
+  &--technology {
+    background-image: url('../assets/image/category/technology/technology.webp');
+  }
+  &--collider {
+    background-image: url('../assets/image/category/technology/collider.webp');
+  }
+  &--lidar {
+    background-image: url('../assets/image/category/technology/lidar.webp');
+  }
+  &--computer {
+    background-image: url('../assets/image/category/technology/computer.webp');
+  }
+  &--spacex {
+    background-image: url('../assets/image/category/technology/spacex.webp');
+  }
+  &--starlink {
+    background-image: url('../assets/image/category/technology/starlink.webp');
+  }
+  &--server {
+    background-image: url('../assets/image/category/technology/server.webp');
+  }
+  &--telescope {
+    background-image: url('../assets/image/category/technology/telescope.webp');
+  }
+}

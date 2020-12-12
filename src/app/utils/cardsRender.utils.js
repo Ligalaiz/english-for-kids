@@ -22,8 +22,8 @@ function addCards({ target, page }) {
     case 'home':
       tempData = indexData.homeData;
       break;
-    case 'tehnology':
-      tempData = indexData.tehnologyData;
+    case 'technology':
+      tempData = indexData.technologyData;
       break;
     case 'weather':
       tempData = indexData.weatherData;
@@ -43,7 +43,7 @@ function addCards({ target, page }) {
     case 'repeat':
       tempData = tempArray;
   }
-
+  
   cardsShuffleUtils(tempData);
 
   let contentRow = `

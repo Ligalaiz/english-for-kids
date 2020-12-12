@@ -1,8 +1,8 @@
-export const tehnologyData = [
+export const technologyData = [
   {
-    category: 'tehnology',
+    category: 'technology',
     title: 'processor',
-    cardName: 'tehnology',
+    cardName: 'technology',
     translate: 'процессор',
     guess: 0,
     mistake: 0,
@@ -10,7 +10,7 @@ export const tehnologyData = [
     percent: 0,
   },
   {
-    category: 'tehnology',
+    category: 'technology',
     title: 'collider',
     cardName: 'collider',
     translate: 'коллайдер',
@@ -20,7 +20,7 @@ export const tehnologyData = [
     percent: 0,
   },
   {
-    category: 'tehnology',
+    category: 'technology',
     title: 'lidar',
     cardName: 'lidar',
     translate: 'лидар',
@@ -30,7 +30,7 @@ export const tehnologyData = [
     percent: 0,
   },
   {
-    category: 'tehnology',
+    category: 'technology',
     title: 'computer',
     cardName: 'computer',
     translate: 'компьютер',
@@ -40,7 +40,7 @@ export const tehnologyData = [
     percent: 0,
   },
   {
-    category: 'tehnology',
+    category: 'technology',
     title: 'spacex',
     cardName: 'spacex',
     translate: 'космос',
@@ -50,7 +50,7 @@ export const tehnologyData = [
     percent: 0,
   },
   {
-    category: 'tehnology',
+    category: 'technology',
     title: 'starlink',
     cardName: 'starlink',
     translate: 'звездочка',
@@ -60,7 +60,7 @@ export const tehnologyData = [
     percent: 0,
   },
   {
-    category: 'tehnology',
+    category: 'technology',
     title: 'server',
     cardName: 'server',
     translate: 'сервер',
@@ -70,7 +70,7 @@ export const tehnologyData = [
     percent: 0,
   },
   {
-    category: 'tehnology',
+    category: 'technology',
     title: 'telescope',
     cardName: 'telescope',
     translate: 'телескоп',

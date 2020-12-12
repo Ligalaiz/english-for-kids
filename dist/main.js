@@ -654,7 +654,7 @@ var homeData = [{
 /*!********************************!*\
   !*** ./app/data/index.data.js ***!
   \********************************/
-/*! exports provided: cityData, homeData, tehnologyData, weatherData, sportData, healthData, animalData, carsData, categoryData */
+/*! exports provided: cityData, homeData, technologyData, weatherData, sportData, healthData, animalData, carsData, categoryData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -665,8 +665,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home.data */ "./app/data/home.data.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "homeData", function() { return _home_data__WEBPACK_IMPORTED_MODULE_1__["homeData"]; });
 
-/* harmony import */ var _tehnology_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tehnology.data */ "./app/data/tehnology.data.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "tehnologyData", function() { return _tehnology_data__WEBPACK_IMPORTED_MODULE_2__["tehnologyData"]; });
+/* harmony import */ var _technology_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./technology.data */ "./app/data/technology.data.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "technologyData", function() { return _technology_data__WEBPACK_IMPORTED_MODULE_2__["technologyData"]; });
 
 /* harmony import */ var _weather_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./weather.data */ "./app/data/weather.data.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "weatherData", function() { return _weather_data__WEBPACK_IMPORTED_MODULE_3__["weatherData"]; });
@@ -785,27 +785,27 @@ var sportData = [{
 
 /***/ }),
 
-/***/ "./app/data/tehnology.data.js":
-/*!************************************!*\
-  !*** ./app/data/tehnology.data.js ***!
-  \************************************/
-/*! exports provided: tehnologyData */
+/***/ "./app/data/technology.data.js":
+/*!*************************************!*\
+  !*** ./app/data/technology.data.js ***!
+  \*************************************/
+/*! exports provided: technologyData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tehnologyData", function() { return tehnologyData; });
-var tehnologyData = [{
-  category: 'tehnology',
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "technologyData", function() { return technologyData; });
+var technologyData = [{
+  category: 'technology',
   title: 'processor',
-  cardName: 'tehnology',
+  cardName: 'technology',
   translate: 'процессор',
   guess: 0,
   mistake: 0,
   click: 0,
   percent: 0
 }, {
-  category: 'tehnology',
+  category: 'technology',
   title: 'collider',
   cardName: 'collider',
   translate: 'коллайдер',
@@ -814,7 +814,7 @@ var tehnologyData = [{
   click: 0,
   percent: 0
 }, {
-  category: 'tehnology',
+  category: 'technology',
   title: 'lidar',
   cardName: 'lidar',
   translate: 'лидар',
@@ -823,7 +823,7 @@ var tehnologyData = [{
   click: 0,
   percent: 0
 }, {
-  category: 'tehnology',
+  category: 'technology',
   title: 'computer',
   cardName: 'computer',
   translate: 'компьютер',
@@ -832,7 +832,7 @@ var tehnologyData = [{
   click: 0,
   percent: 0
 }, {
-  category: 'tehnology',
+  category: 'technology',
   title: 'spacex',
   cardName: 'spacex',
   translate: 'космос',
@@ -841,7 +841,7 @@ var tehnologyData = [{
   click: 0,
   percent: 0
 }, {
-  category: 'tehnology',
+  category: 'technology',
   title: 'starlink',
   cardName: 'starlink',
   translate: 'звездочка',
@@ -850,7 +850,7 @@ var tehnologyData = [{
   click: 0,
   percent: 0
 }, {
-  category: 'tehnology',
+  category: 'technology',
   title: 'server',
   cardName: 'server',
   translate: 'сервер',
@@ -859,7 +859,7 @@ var tehnologyData = [{
   click: 0,
   percent: 0
 }, {
-  category: 'tehnology',
+  category: 'technology',
   title: 'telescope',
   cardName: 'telescope',
   translate: 'телескоп',
@@ -995,7 +995,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/createElement.utils */ "./app/utils/createElement.utils.js");
 
 var commonPageTemplate = function commonPageTemplate(parent) {
-  Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'wrap', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('header', 'header', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('button', 'header__btn', null, null, ['type', 'button']), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'header__logo', 'English for kids', null, ['href', '#'], ['route', 'category']), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('nav', 'header__nav nav', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('ul', 'nav__list reset-list', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Category', null, ['href', '#'], ['route', 'category'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'City', null, ['href', '#'], ['route', 'city'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Home', null, ['href', '#'], ['route', 'home'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Tehnology', null, ['href', '#'], ['route', 'it'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Weather', null, ['href', '#'], ['route', 'weather'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Sport', null, ['href', '#'], ['route', 'sport'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Health', null, ['href', '#'], ['route', 'health'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Animal', null, ['href', '#'], ['route', 'animal'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Cars', null, ['href', '#'], ['route', 'cars'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Statistics', null, ['href', '#'], ['route', 'statistics'])], null)], null)], null)], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('main', 'main', null, null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'timer__wrap', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'timer', null, null)], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'message__wrap', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'message__image', null, null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'message__text', null, null)], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'overlay', null, null)], parent);
+  Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'wrap', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('header', 'header', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('button', 'header__btn', null, null, ['type', 'button']), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'header__logo', 'English for kids', null, ['href', '#'], ['route', 'category']), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('nav', 'header__nav nav', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('ul', 'nav__list reset-list', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Category', null, ['href', '#'], ['route', 'category'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'City', null, ['href', '#'], ['route', 'city'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Home', null, ['href', '#'], ['route', 'home'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Technology', null, ['href', '#'], ['route', 'technology'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Weather', null, ['href', '#'], ['route', 'weather'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Sport', null, ['href', '#'], ['route', 'sport'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Health', null, ['href', '#'], ['route', 'health'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Animal', null, ['href', '#'], ['route', 'animal'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Cars', null, ['href', '#'], ['route', 'cars'])], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('li', 'nav__item', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('a', 'nav__link', 'Statistics', null, ['href', '#'], ['route', 'statistics'])], null)], null)], null)], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('main', 'main', null, null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'timer__wrap', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'timer', null, null)], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'message__wrap', [Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'message__image', null, null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'message__text', null, null)], null), Object(_utils_createElement_utils__WEBPACK_IMPORTED_MODULE_0__["default"])('div', 'overlay', null, null)], parent);
 };
 
 /***/ }),
@@ -1106,7 +1106,7 @@ function addCards(_ref) {
   var value = page ? page : target.dataset.route || target.dataset.card;
   var tempArray = Object(_storage_utils__WEBPACK_IMPORTED_MODULE_2__["get"])('gameProgress').filter(function (item) {
     return item['percent'] > 0 && item['percent'] <= 35 || item['percent'] === 0 && item['mistake'] > 0;
-  }).slice(0, 8); // set('diffWords', tempArray);
+  }).slice(0, 8);
 
   switch (value) {
     case 'city':
@@ -1117,8 +1117,8 @@ function addCards(_ref) {
       tempData = _data_index_data__WEBPACK_IMPORTED_MODULE_0__["homeData"];
       break;
 
-    case 'tehnology':
-      tempData = _data_index_data__WEBPACK_IMPORTED_MODULE_0__["tehnologyData"];
+    case 'technology':
+      tempData = _data_index_data__WEBPACK_IMPORTED_MODULE_0__["technologyData"];
       break;
 
     case 'weather':
@@ -2360,8 +2360,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function changeFlage(isForward, type) {
   isForward[type] = isForward[type] === 'forward' ? 'reverse' : 'forward';
-} //TODO: бросить  в константу
-
+}
 
 var isForward = {
   category: 'forward',

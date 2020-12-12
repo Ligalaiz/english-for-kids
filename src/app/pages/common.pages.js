@@ -18,7 +18,7 @@ export const commonPageTemplate = (parent) => {
             createElementUtils('a', 'nav__link', 'Home', null, ['href','#'], ['route', 'home']),
           ], null),
           createElementUtils('li', 'nav__item', [
-            createElementUtils('a', 'nav__link', 'Tehnology', null, ['href','#'], ['route', 'it']),
+            createElementUtils('a', 'nav__link', 'Technology', null, ['href','#'], ['route', 'technology']),
           ], null),
           createElementUtils('li', 'nav__item', [
             createElementUtils('a', 'nav__link', 'Weather', null, ['href','#'], ['route', 'weather']),

@@ -191,7 +191,7 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%; }
 
-.card--tehnology {
+.card--technology {
   background-image: url(2ffd3e4ba444ec577252ef70f544ec5f.webp); }
 
 .card--collider {
